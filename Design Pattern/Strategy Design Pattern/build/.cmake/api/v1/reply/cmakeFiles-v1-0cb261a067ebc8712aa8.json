@@ -16,7 +16,7 @@
 		},
 		{
 			"isGenerated" : true,
-			"path" : "C:/Users/sahil/OneDrive/Documents/LLD/build/CMakeFiles/4.3.3/CMakeSystem.cmake"
+			"path" : "build/CMakeFiles/4.3.3/CMakeSystem.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -305,7 +305,7 @@
 		},
 		{
 			"isGenerated" : true,
-			"path" : "C:/Users/sahil/OneDrive/Documents/LLD/build/CMakeFiles/4.3.3/CMakeCCompiler.cmake"
+			"path" : "build/CMakeFiles/4.3.3/CMakeCCompiler.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -569,7 +569,7 @@
 		},
 		{
 			"isGenerated" : true,
-			"path" : "C:/Users/sahil/OneDrive/Documents/LLD/build/CMakeFiles/4.3.3/CMakeCXXCompiler.cmake"
+			"path" : "build/CMakeFiles/4.3.3/CMakeCXXCompiler.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -643,7 +643,7 @@
 		},
 		{
 			"isGenerated" : true,
-			"path" : "C:/Users/sahil/OneDrive/Documents/LLD/build/CMakeFiles/4.3.3/CMakeRCCompiler.cmake"
+			"path" : "build/CMakeFiles/4.3.3/CMakeRCCompiler.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -727,7 +727,7 @@
 		},
 		{
 			"isGenerated" : true,
-			"path" : "C:/Users/sahil/OneDrive/Documents/LLD/build/CMakeFiles/4.3.3/CMakeCCompiler.cmake"
+			"path" : "build/CMakeFiles/4.3.3/CMakeCCompiler.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -881,7 +881,7 @@
 		},
 		{
 			"isGenerated" : true,
-			"path" : "C:/Users/sahil/OneDrive/Documents/LLD/build/CMakeFiles/4.3.3/CMakeCXXCompiler.cmake"
+			"path" : "build/CMakeFiles/4.3.3/CMakeCXXCompiler.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -932,8 +932,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "C:/Users/sahil/OneDrive/Documents/LLD/build",
-		"source" : "C:/Users/sahil/OneDrive/Documents/LLD/HelloCpp"
+		"build" : "C:/Users/sahil/OneDrive/Documents/LLD/Design Pattern/Strategy Design Pattern/build",
+		"source" : "C:/Users/sahil/OneDrive/Documents/LLD/Design Pattern/Strategy Design Pattern"
 	},
 	"version" : 
 	{

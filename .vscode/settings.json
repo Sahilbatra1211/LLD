@@ -1,3 +1,5 @@
 {
-    "cmake.sourceDirectory": "C:/Users/sahil/OneDrive/Documents/LLD/HelloCpp"
+    "cmake.sourceDirectory": "${workspaceFolder}",
+    "cmake.buildDirectory": "${workspaceFolder}/build",
+    "cmake.configureOnOpen": true
 }

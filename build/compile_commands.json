@@ -1,8 +1,20 @@
 [
 {
   "directory": "C:/Users/sahil/OneDrive/Documents/LLD/build",
-  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -g -std=gnu++20 -o CMakeFiles\\HelloCpp.dir\\main.cpp.obj -c C:\\Users\\sahil\\OneDrive\\Documents\\LLD\\HelloCpp\\main.cpp",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -g -std=gnu++20 -o HelloCpp\\CMakeFiles\\HelloCpp.dir\\main.cpp.obj -c C:\\Users\\sahil\\OneDrive\\Documents\\LLD\\HelloCpp\\main.cpp",
   "file": "C:/Users/sahil/OneDrive/Documents/LLD/HelloCpp/main.cpp",
-  "output": "C:/Users/sahil/OneDrive/Documents/LLD/build/CMakeFiles/HelloCpp.dir/main.cpp.obj"
+  "output": "C:/Users/sahil/OneDrive/Documents/LLD/build/HelloCpp/CMakeFiles/HelloCpp.dir/main.cpp.obj"
+},
+{
+  "directory": "C:/Users/sahil/OneDrive/Documents/LLD/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -g -std=gnu++20 -o \"Design Pattern\\Strategy Design Pattern\\CMakeFiles\\StrategyPattern.dir\\main.cpp.obj\" -c \"C:\\Users\\sahil\\OneDrive\\Documents\\LLD\\Design Pattern\\Strategy Design Pattern\\main.cpp\"",
+  "file": "C:/Users/sahil/OneDrive/Documents/LLD/Design Pattern/Strategy Design Pattern/main.cpp",
+  "output": "C:/Users/sahil/OneDrive/Documents/LLD/build/Design Pattern/Strategy Design Pattern/CMakeFiles/StrategyPattern.dir/main.cpp.obj"
+},
+{
+  "directory": "C:/Users/sahil/OneDrive/Documents/LLD/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -g -std=gnu++20 -o \"Design Pattern\\Strategy Design Pattern\\CMakeFiles\\StrategyPattern.dir\\Batsman.cpp.obj\" -c \"C:\\Users\\sahil\\OneDrive\\Documents\\LLD\\Design Pattern\\Strategy Design Pattern\\Batsman.cpp\"",
+  "file": "C:/Users/sahil/OneDrive/Documents/LLD/Design Pattern/Strategy Design Pattern/Batsman.cpp",
+  "output": "C:/Users/sahil/OneDrive/Documents/LLD/build/Design Pattern/Strategy Design Pattern/CMakeFiles/StrategyPattern.dir/Batsman.cpp.obj"
 }
 ]

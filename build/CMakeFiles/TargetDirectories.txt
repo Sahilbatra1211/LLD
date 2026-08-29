@@ -1,3 +1,8 @@
-C:/Users/sahil/OneDrive/Documents/LLD/build/CMakeFiles/HelloCpp.dir
 C:/Users/sahil/OneDrive/Documents/LLD/build/CMakeFiles/edit_cache.dir
 C:/Users/sahil/OneDrive/Documents/LLD/build/CMakeFiles/rebuild_cache.dir
+C:/Users/sahil/OneDrive/Documents/LLD/build/HelloCpp/CMakeFiles/HelloCpp.dir
+C:/Users/sahil/OneDrive/Documents/LLD/build/HelloCpp/CMakeFiles/edit_cache.dir
+C:/Users/sahil/OneDrive/Documents/LLD/build/HelloCpp/CMakeFiles/rebuild_cache.dir
+C:/Users/sahil/OneDrive/Documents/LLD/build/Design Pattern/Strategy Design Pattern/CMakeFiles/StrategyPattern.dir
+C:/Users/sahil/OneDrive/Documents/LLD/build/Design Pattern/Strategy Design Pattern/CMakeFiles/edit_cache.dir
+C:/Users/sahil/OneDrive/Documents/LLD/build/Design Pattern/Strategy Design Pattern/CMakeFiles/rebuild_cache.dir

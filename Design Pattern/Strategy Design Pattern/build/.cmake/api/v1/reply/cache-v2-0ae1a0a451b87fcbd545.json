@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/sahil/OneDrive/Documents/LLD/build"
+			"value" : "c:/Users/sahil/OneDrive/Documents/LLD/Design Pattern/Strategy Design Pattern/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -575,7 +575,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/sahil/OneDrive/Documents/LLD/build/CMakeFiles/pkgRedirects"
+			"value" : "C:/Users/sahil/OneDrive/Documents/LLD/Design Pattern/Strategy Design Pattern/build/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -647,7 +647,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/sahil/OneDrive/Documents/LLD/HelloCpp"
+			"value" : "C:/Users/sahil/OneDrive/Documents/LLD/Design Pattern/Strategy Design Pattern"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -659,7 +659,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Program Files (x86)/HelloCpp"
+			"value" : "C:/Program Files (x86)/StrategyPattern"
 		},
 		{
 			"name" : "CMAKE_LINKER",
@@ -903,7 +903,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "HelloCpp"
+			"value" : "StrategyPattern"
 		},
 		{
 			"name" : "CMAKE_PROJECT_SPDX_LICENSE",
@@ -1310,7 +1310,7 @@
 			"value" : "FALSE"
 		},
 		{
-			"name" : "HelloCpp_BINARY_DIR",
+			"name" : "StrategyPattern_BINARY_DIR",
 			"properties" : 
 			[
 				{
@@ -1319,10 +1319,10 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/sahil/OneDrive/Documents/LLD/build"
+			"value" : "C:/Users/sahil/OneDrive/Documents/LLD/Design Pattern/Strategy Design Pattern/build"
 		},
 		{
-			"name" : "HelloCpp_IS_TOP_LEVEL",
+			"name" : "StrategyPattern_IS_TOP_LEVEL",
 			"properties" : 
 			[
 				{
@@ -1334,7 +1334,7 @@
 			"value" : "ON"
 		},
 		{
-			"name" : "HelloCpp_SOURCE_DIR",
+			"name" : "StrategyPattern_SOURCE_DIR",
 			"properties" : 
 			[
 				{
@@ -1343,7 +1343,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/sahil/OneDrive/Documents/LLD/HelloCpp"
+			"value" : "C:/Users/sahil/OneDrive/Documents/LLD/Design Pattern/Strategy Design Pattern"
 		}
 	],
 	"kind" : "cache",

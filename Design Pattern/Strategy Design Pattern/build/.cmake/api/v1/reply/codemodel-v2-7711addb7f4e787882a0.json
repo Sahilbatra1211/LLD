@@ -28,7 +28,7 @@
 					[
 						0
 					],
-					"name" : "HelloCpp",
+					"name" : "StrategyPattern",
 					"targetIndexes" : 
 					[
 						0
@@ -39,9 +39,9 @@
 			[
 				{
 					"directoryIndex" : 0,
-					"id" : "HelloCpp::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-HelloCpp-Debug-7f4bf3122c2194e49802.json",
-					"name" : "HelloCpp",
+					"id" : "StrategyPattern::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-StrategyPattern-Debug-9f036245aee8deae0cef.json",
+					"name" : "StrategyPattern",
 					"projectIndex" : 0
 				}
 			]
@@ -50,8 +50,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/sahil/OneDrive/Documents/LLD/build",
-		"source" : "C:/Users/sahil/OneDrive/Documents/LLD/HelloCpp"
+		"build" : "C:/Users/sahil/OneDrive/Documents/LLD/Design Pattern/Strategy Design Pattern/build",
+		"source" : "C:/Users/sahil/OneDrive/Documents/LLD/Design Pattern/Strategy Design Pattern"
 	},
 	"version" : 
 	{

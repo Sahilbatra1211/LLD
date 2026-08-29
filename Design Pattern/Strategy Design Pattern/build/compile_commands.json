@@ -1,0 +1,8 @@
+[
+{
+  "directory": "C:/Users/sahil/OneDrive/Documents/LLD/Design Pattern/Strategy Design Pattern/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -g -std=gnu++20 -o CMakeFiles\\StrategyPattern.dir\\main.cpp.obj -c \"C:\\Users\\sahil\\OneDrive\\Documents\\LLD\\Design Pattern\\Strategy Design Pattern\\main.cpp\"",
+  "file": "C:/Users/sahil/OneDrive/Documents/LLD/Design Pattern/Strategy Design Pattern/main.cpp",
+  "output": "C:/Users/sahil/OneDrive/Documents/LLD/Design Pattern/Strategy Design Pattern/build/CMakeFiles/StrategyPattern.dir/main.cpp.obj"
+}
+]

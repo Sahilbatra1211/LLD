@@ -1,0 +1,124 @@
+{
+	"configurations" : 
+	[
+		{
+			"abstractTargets" : [],
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"jsonFile" : "directory-.-Debug-f040eec181a89de70dbe.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "HelloCpp",
+					"jsonFile" : "directory-HelloCpp-Debug-7e5a7e559b5af6a65d38.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "HelloCpp",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "Design Pattern/Strategy Design Pattern",
+					"jsonFile" : "directory-Design Pattern.Strategy Design Pattern-Debug-b12e4b01d246ddf4fa6e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 2,
+					"source" : "Design Pattern/Strategy Design Pattern",
+					"targetIndexes" : 
+					[
+						1
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "LLD"
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "HelloCpp",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "StrategyPattern",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 1,
+					"id" : "HelloCpp::@cc16aa2d9b8ef4735fbc",
+					"jsonFile" : "target-HelloCpp-Debug-3de5668d94f40cee3c5b.json",
+					"name" : "HelloCpp",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "StrategyPattern::@bc98839d513ee17f7908",
+					"jsonFile" : "target-StrategyPattern-Debug-497b1e507a461336e856.json",
+					"name" : "StrategyPattern",
+					"projectIndex" : 2
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/sahil/OneDrive/Documents/LLD/build",
+		"source" : "C:/Users/sahil/OneDrive/Documents/LLD"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 10
+	}
+}
