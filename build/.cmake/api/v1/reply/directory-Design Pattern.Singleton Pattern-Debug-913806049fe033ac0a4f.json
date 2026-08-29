@@ -13,7 +13,7 @@
 	"installers" : [],
 	"paths" : 
 	{
-		"build" : "HelloCpp",
-		"source" : "HelloCpp"
+		"build" : "Design Pattern/Singleton Pattern",
+		"source" : "Design Pattern/Singleton Pattern"
 	}
 }

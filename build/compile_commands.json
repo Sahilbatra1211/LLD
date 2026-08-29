@@ -1,14 +1,8 @@
 [
 {
   "directory": "C:/Users/sahil/OneDrive/Documents/LLD/build",
-  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -g -std=gnu++20 -o HelloCpp\\CMakeFiles\\HelloCpp.dir\\main.cpp.obj -c C:\\Users\\sahil\\OneDrive\\Documents\\LLD\\HelloCpp\\main.cpp",
-  "file": "C:/Users/sahil/OneDrive/Documents/LLD/HelloCpp/main.cpp",
-  "output": "C:/Users/sahil/OneDrive/Documents/LLD/build/HelloCpp/CMakeFiles/HelloCpp.dir/main.cpp.obj"
-},
-{
-  "directory": "C:/Users/sahil/OneDrive/Documents/LLD/build",
-  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -g -std=gnu++20 -o \"Design Pattern\\Observer Design Pattern\\CMakeFiles\\ObserverPattern.dir\\main.cpp.obj\" -c \"C:\\Users\\sahil\\OneDrive\\Documents\\LLD\\Design Pattern\\Observer Design Pattern\\main.cpp\"",
-  "file": "C:/Users/sahil/OneDrive/Documents/LLD/Design Pattern/Observer Design Pattern/main.cpp",
-  "output": "C:/Users/sahil/OneDrive/Documents/LLD/build/Design Pattern/Observer Design Pattern/CMakeFiles/ObserverPattern.dir/main.cpp.obj"
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -g -std=gnu++20 -o \"Design Pattern\\Singleton Pattern\\CMakeFiles\\SingletonPattern.dir\\main.cpp.obj\" -c \"C:\\Users\\sahil\\OneDrive\\Documents\\LLD\\Design Pattern\\Singleton Pattern\\main.cpp\"",
+  "file": "C:/Users/sahil/OneDrive/Documents/LLD/Design Pattern/Singleton Pattern/main.cpp",
+  "output": "C:/Users/sahil/OneDrive/Documents/LLD/build/Design Pattern/Singleton Pattern/CMakeFiles/SingletonPattern.dir/main.cpp.obj"
 }
 ]

@@ -216,10 +216,7 @@
 			"path" : "C:/msys64/ucrt64/share/cmake/Modules/Platform/Linker/Windows-GNU.cmake"
 		},
 		{
-			"path" : "HelloCpp/CMakeLists.txt"
-		},
-		{
-			"path" : "Design Pattern/Observer Design Pattern/CMakeLists.txt"
+			"path" : "Design Pattern/Singleton Pattern/CMakeLists.txt"
 		}
 	],
 	"kind" : "cmakeFiles",

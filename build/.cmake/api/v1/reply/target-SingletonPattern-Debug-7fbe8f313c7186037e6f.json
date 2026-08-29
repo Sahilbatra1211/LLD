@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "Design Pattern/Observer Design Pattern/ObserverPattern.exe"
+			"path" : "Design Pattern/Singleton Pattern/SingletonPattern.exe"
 		},
 		{
-			"path" : "Design Pattern/Observer Design Pattern/ObserverPattern.pdb"
+			"path" : "Design Pattern/Singleton Pattern/SingletonPattern.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -17,7 +17,7 @@
 		],
 		"files" : 
 		[
-			"Design Pattern/Observer Design Pattern/CMakeLists.txt"
+			"Design Pattern/Singleton Pattern/CMakeLists.txt"
 		],
 		"nodes" : 
 		[
@@ -61,7 +61,7 @@
 			]
 		}
 	],
-	"id" : "ObserverPattern::@63515a4e676532ff342a",
+	"id" : "SingletonPattern::@bcebe3e841e68d769d20",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -77,12 +77,12 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "ObserverPattern",
-	"nameOnDisk" : "ObserverPattern.exe",
+	"name" : "SingletonPattern",
+	"nameOnDisk" : "SingletonPattern.exe",
 	"paths" : 
 	{
-		"build" : "Design Pattern/Observer Design Pattern",
-		"source" : "Design Pattern/Observer Design Pattern"
+		"build" : "Design Pattern/Singleton Pattern",
+		"source" : "Design Pattern/Singleton Pattern"
 	},
 	"sourceGroups" : 
 	[
@@ -99,7 +99,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "Design Pattern/Observer Design Pattern/main.cpp",
+			"path" : "Design Pattern/Singleton Pattern/main.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

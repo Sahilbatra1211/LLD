@@ -9,8 +9,7 @@
 					"build" : ".",
 					"childIndexes" : 
 					[
-						1,
-						2
+						1
 					],
 					"jsonFile" : "directory-.-Debug-f040eec181a89de70dbe.json",
 					"minimumCMakeVersion" : 
@@ -21,33 +20,18 @@
 					"source" : "."
 				},
 				{
-					"build" : "HelloCpp",
-					"jsonFile" : "directory-HelloCpp-Debug-7e5a7e559b5af6a65d38.json",
+					"build" : "Design Pattern/Singleton Pattern",
+					"jsonFile" : "directory-Design Pattern.Singleton Pattern-Debug-913806049fe033ac0a4f.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.20"
 					},
 					"parentIndex" : 0,
 					"projectIndex" : 1,
-					"source" : "HelloCpp",
+					"source" : "Design Pattern/Singleton Pattern",
 					"targetIndexes" : 
 					[
 						0
-					]
-				},
-				{
-					"build" : "Design Pattern/Observer Design Pattern",
-					"jsonFile" : "directory-Design Pattern.Observer Design Pattern-Debug-7e9de2300a7417ea641a.json",
-					"minimumCMakeVersion" : 
-					{
-						"string" : "3.20"
-					},
-					"parentIndex" : 0,
-					"projectIndex" : 2,
-					"source" : "Design Pattern/Observer Design Pattern",
-					"targetIndexes" : 
-					[
-						1
 					]
 				}
 			],
@@ -57,8 +41,7 @@
 				{
 					"childIndexes" : 
 					[
-						1,
-						2
+						1
 					],
 					"directoryIndexes" : 
 					[
@@ -71,23 +54,11 @@
 					[
 						1
 					],
-					"name" : "HelloCpp",
+					"name" : "SingletonPattern",
 					"parentIndex" : 0,
 					"targetIndexes" : 
 					[
 						0
-					]
-				},
-				{
-					"directoryIndexes" : 
-					[
-						2
-					],
-					"name" : "ObserverPattern",
-					"parentIndex" : 0,
-					"targetIndexes" : 
-					[
-						1
 					]
 				}
 			],
@@ -95,17 +66,10 @@
 			[
 				{
 					"directoryIndex" : 1,
-					"id" : "HelloCpp::@cc16aa2d9b8ef4735fbc",
-					"jsonFile" : "target-HelloCpp-Debug-3de5668d94f40cee3c5b.json",
-					"name" : "HelloCpp",
+					"id" : "SingletonPattern::@bcebe3e841e68d769d20",
+					"jsonFile" : "target-SingletonPattern-Debug-7fbe8f313c7186037e6f.json",
+					"name" : "SingletonPattern",
 					"projectIndex" : 1
-				},
-				{
-					"directoryIndex" : 2,
-					"id" : "ObserverPattern::@63515a4e676532ff342a",
-					"jsonFile" : "target-ObserverPattern-Debug-69e97dd0514833ce28cc.json",
-					"name" : "ObserverPattern",
-					"projectIndex" : 2
 				}
 			]
 		}

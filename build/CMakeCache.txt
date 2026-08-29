@@ -275,6 +275,15 @@ ObserverPattern_IS_TOP_LEVEL:STATIC=OFF
 ObserverPattern_SOURCE_DIR:STATIC=C:/Users/sahil/OneDrive/Documents/LLD/Design Pattern/Observer Design Pattern
 
 //Value Computed by CMake
+SingletonPattern_BINARY_DIR:STATIC=C:/Users/sahil/OneDrive/Documents/LLD/build/Design Pattern/Singleton Pattern
+
+//Value Computed by CMake
+SingletonPattern_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+SingletonPattern_SOURCE_DIR:STATIC=C:/Users/sahil/OneDrive/Documents/LLD/Design Pattern/Singleton Pattern
+
+//Value Computed by CMake
 StrategyPattern_BINARY_DIR:STATIC=C:/Users/sahil/OneDrive/Documents/LLD/build/Design Pattern/Strategy Design Pattern
 
 //Value Computed by CMake
@@ -390,7 +399,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=3
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=2
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

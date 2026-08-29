@@ -811,7 +811,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "3"
+			"value" : "2"
 		},
 		{
 			"name" : "CMAKE_OBJCOPY",
@@ -1416,6 +1416,42 @@
 			],
 			"type" : "STATIC",
 			"value" : "C:/Users/sahil/OneDrive/Documents/LLD/Design Pattern/Observer Design Pattern"
+		},
+		{
+			"name" : "SingletonPattern_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "C:/Users/sahil/OneDrive/Documents/LLD/build/Design Pattern/Singleton Pattern"
+		},
+		{
+			"name" : "SingletonPattern_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "OFF"
+		},
+		{
+			"name" : "SingletonPattern_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "C:/Users/sahil/OneDrive/Documents/LLD/Design Pattern/Singleton Pattern"
 		},
 		{
 			"name" : "StrategyPattern_BINARY_DIR",

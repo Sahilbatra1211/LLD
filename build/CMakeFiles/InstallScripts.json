@@ -2,8 +2,7 @@
 	"InstallScripts" : 
 	[
 		"C:/Users/sahil/OneDrive/Documents/LLD/build/cmake_install.cmake",
-		"C:/Users/sahil/OneDrive/Documents/LLD/build/HelloCpp/cmake_install.cmake",
-		"C:/Users/sahil/OneDrive/Documents/LLD/build/Design Pattern/Observer Design Pattern/cmake_install.cmake"
+		"C:/Users/sahil/OneDrive/Documents/LLD/build/Design Pattern/Singleton Pattern/cmake_install.cmake"
 	],
 	"Parallel" : false
 }
