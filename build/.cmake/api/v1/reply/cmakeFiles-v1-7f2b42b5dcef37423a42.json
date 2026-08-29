@@ -219,7 +219,7 @@
 			"path" : "HelloCpp/CMakeLists.txt"
 		},
 		{
-			"path" : "Design Pattern/Strategy Design Pattern/CMakeLists.txt"
+			"path" : "Design Pattern/Observer Design Pattern/CMakeLists.txt"
 		}
 	],
 	"kind" : "cmakeFiles",

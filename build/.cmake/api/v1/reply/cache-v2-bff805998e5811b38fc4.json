@@ -1382,6 +1382,42 @@
 			"value" : "C:/Users/sahil/OneDrive/Documents/LLD"
 		},
 		{
+			"name" : "ObserverPattern_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "C:/Users/sahil/OneDrive/Documents/LLD/build/Design Pattern/Observer Design Pattern"
+		},
+		{
+			"name" : "ObserverPattern_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "OFF"
+		},
+		{
+			"name" : "ObserverPattern_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "C:/Users/sahil/OneDrive/Documents/LLD/Design Pattern/Observer Design Pattern"
+		},
+		{
 			"name" : "StrategyPattern_BINARY_DIR",
 			"properties" : 
 			[

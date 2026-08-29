@@ -7,14 +7,8 @@
 },
 {
   "directory": "C:/Users/sahil/OneDrive/Documents/LLD/build",
-  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -g -std=gnu++20 -o \"Design Pattern\\Strategy Design Pattern\\CMakeFiles\\StrategyPattern.dir\\main.cpp.obj\" -c \"C:\\Users\\sahil\\OneDrive\\Documents\\LLD\\Design Pattern\\Strategy Design Pattern\\main.cpp\"",
-  "file": "C:/Users/sahil/OneDrive/Documents/LLD/Design Pattern/Strategy Design Pattern/main.cpp",
-  "output": "C:/Users/sahil/OneDrive/Documents/LLD/build/Design Pattern/Strategy Design Pattern/CMakeFiles/StrategyPattern.dir/main.cpp.obj"
-},
-{
-  "directory": "C:/Users/sahil/OneDrive/Documents/LLD/build",
-  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -g -std=gnu++20 -o \"Design Pattern\\Strategy Design Pattern\\CMakeFiles\\StrategyPattern.dir\\Batsman.cpp.obj\" -c \"C:\\Users\\sahil\\OneDrive\\Documents\\LLD\\Design Pattern\\Strategy Design Pattern\\Batsman.cpp\"",
-  "file": "C:/Users/sahil/OneDrive/Documents/LLD/Design Pattern/Strategy Design Pattern/Batsman.cpp",
-  "output": "C:/Users/sahil/OneDrive/Documents/LLD/build/Design Pattern/Strategy Design Pattern/CMakeFiles/StrategyPattern.dir/Batsman.cpp.obj"
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -g -std=gnu++20 -o \"Design Pattern\\Observer Design Pattern\\CMakeFiles\\ObserverPattern.dir\\main.cpp.obj\" -c \"C:\\Users\\sahil\\OneDrive\\Documents\\LLD\\Design Pattern\\Observer Design Pattern\\main.cpp\"",
+  "file": "C:/Users/sahil/OneDrive/Documents/LLD/Design Pattern/Observer Design Pattern/main.cpp",
+  "output": "C:/Users/sahil/OneDrive/Documents/LLD/build/Design Pattern/Observer Design Pattern/CMakeFiles/ObserverPattern.dir/main.cpp.obj"
 }
 ]

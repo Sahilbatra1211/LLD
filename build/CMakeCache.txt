@@ -266,6 +266,15 @@ LLD_IS_TOP_LEVEL:STATIC=ON
 LLD_SOURCE_DIR:STATIC=C:/Users/sahil/OneDrive/Documents/LLD
 
 //Value Computed by CMake
+ObserverPattern_BINARY_DIR:STATIC=C:/Users/sahil/OneDrive/Documents/LLD/build/Design Pattern/Observer Design Pattern
+
+//Value Computed by CMake
+ObserverPattern_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+ObserverPattern_SOURCE_DIR:STATIC=C:/Users/sahil/OneDrive/Documents/LLD/Design Pattern/Observer Design Pattern
+
+//Value Computed by CMake
 StrategyPattern_BINARY_DIR:STATIC=C:/Users/sahil/OneDrive/Documents/LLD/build/Design Pattern/Strategy Design Pattern
 
 //Value Computed by CMake

@@ -71,7 +71,7 @@ rule CXX_EXECUTABLE_LINKER__HelloCpp_Debug
 #############################################
 # Rule for generating CXX dependencies.
 
-rule CXX_SCAN__StrategyPattern_Debug
+rule CXX_SCAN__ObserverPattern_Debug
   depfile = $DEP_FILE
   command = C:\msys64\ucrt64\bin\g++.exe $DEFINES $INCLUDES $FLAGS -E -x c++ $in -MT $DYNDEP_INTERMEDIATE_FILE -MD -MF $DEP_FILE -fmodules-ts -fdeps-file=$DYNDEP_INTERMEDIATE_FILE -fdeps-target=$OBJ_FILE -fdeps-format=p1689r5 -o $PREPROCESSED_OUTPUT_FILE
   description = Scanning $in for CXX dependencies
@@ -80,8 +80,8 @@ rule CXX_SCAN__StrategyPattern_Debug
 #############################################
 # Rule to generate ninja dyndep files for CXX.
 
-rule CXX_DYNDEP__StrategyPattern_Debug
-  command = C:\msys64\ucrt64\bin\cmake.exe -E cmake_ninja_dyndep --tdi="Design Pattern\Strategy Design Pattern\CMakeFiles\StrategyPattern.dir\CXXDependInfo.json" --lang=CXX --modmapfmt=gcc --dd=$out @$out.rsp
+rule CXX_DYNDEP__ObserverPattern_Debug
+  command = C:\msys64\ucrt64\bin\cmake.exe -E cmake_ninja_dyndep --tdi="Design Pattern\Observer Design Pattern\CMakeFiles\ObserverPattern.dir\CXXDependInfo.json" --lang=CXX --modmapfmt=gcc --dd=$out @$out.rsp
   description = Generating CXX dyndep file $out
   rspfile = $out.rsp
   rspfile_content = $in
@@ -91,7 +91,7 @@ rule CXX_DYNDEP__StrategyPattern_Debug
 #############################################
 # Rule for compiling CXX files.
 
-rule CXX_COMPILER__StrategyPattern_scanned_Debug
+rule CXX_COMPILER__ObserverPattern_scanned_Debug
   depfile = $DEP_FILE
   deps = gcc
   command = ${LAUNCHER}${CODE_CHECK}C:\msys64\ucrt64\bin\g++.exe $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -fmodules-ts -fmodule-mapper=$DYNDEP_MODULE_MAP_FILE -MD -fdeps-format=p1689r5 -x c++ -o $out -c $in
@@ -101,7 +101,7 @@ rule CXX_COMPILER__StrategyPattern_scanned_Debug
 #############################################
 # Rule for compiling CXX files.
 
-rule CXX_COMPILER__StrategyPattern_unscanned_Debug
+rule CXX_COMPILER__ObserverPattern_unscanned_Debug
   depfile = $DEP_FILE
   deps = gcc
   command = ${LAUNCHER}${CODE_CHECK}C:\msys64\ucrt64\bin\g++.exe $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
@@ -111,7 +111,7 @@ rule CXX_COMPILER__StrategyPattern_unscanned_Debug
 #############################################
 # Rule for linking CXX executable.
 
-rule CXX_EXECUTABLE_LINKER__StrategyPattern_Debug
+rule CXX_EXECUTABLE_LINKER__ObserverPattern_Debug
   command = C:\WINDOWS\system32\cmd.exe /C "$PRE_LINK && C:\msys64\ucrt64\bin\g++.exe $FLAGS $LINK_FLAGS $in -o $TARGET_FILE -Wl,--out-implib,$TARGET_IMPLIB -Wl,--major-image-version,0,--minor-image-version,0 $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
   description = Linking CXX executable $TARGET_FILE
   restat = $RESTAT

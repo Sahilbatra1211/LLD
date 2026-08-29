@@ -36,15 +36,15 @@
 					]
 				},
 				{
-					"build" : "Design Pattern/Strategy Design Pattern",
-					"jsonFile" : "directory-Design Pattern.Strategy Design Pattern-Debug-b12e4b01d246ddf4fa6e.json",
+					"build" : "Design Pattern/Observer Design Pattern",
+					"jsonFile" : "directory-Design Pattern.Observer Design Pattern-Debug-7e9de2300a7417ea641a.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.20"
 					},
 					"parentIndex" : 0,
 					"projectIndex" : 2,
-					"source" : "Design Pattern/Strategy Design Pattern",
+					"source" : "Design Pattern/Observer Design Pattern",
 					"targetIndexes" : 
 					[
 						1
@@ -83,7 +83,7 @@
 					[
 						2
 					],
-					"name" : "StrategyPattern",
+					"name" : "ObserverPattern",
 					"parentIndex" : 0,
 					"targetIndexes" : 
 					[
@@ -102,9 +102,9 @@
 				},
 				{
 					"directoryIndex" : 2,
-					"id" : "StrategyPattern::@bc98839d513ee17f7908",
-					"jsonFile" : "target-StrategyPattern-Debug-497b1e507a461336e856.json",
-					"name" : "StrategyPattern",
+					"id" : "ObserverPattern::@63515a4e676532ff342a",
+					"jsonFile" : "target-ObserverPattern-Debug-69e97dd0514833ce28cc.json",
+					"name" : "ObserverPattern",
 					"projectIndex" : 2
 				}
 			]

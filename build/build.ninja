@@ -134,74 +134,65 @@ build HelloCpp/rebuild_cache: phony HelloCpp/CMakeFiles/rebuild_cache.util
 # =============================================================================
 
 # =============================================================================
-# Object build statements for EXECUTABLE target StrategyPattern
+# Object build statements for EXECUTABLE target ObserverPattern
 
 
 #############################################
-# Order-only phony target for StrategyPattern
+# Order-only phony target for ObserverPattern
 
-build cmake_object_order_depends_target_StrategyPattern: phony || .
+build cmake_object_order_depends_target_ObserverPattern: phony || .
 
-build Design$ Pattern/Strategy$ Design$ Pattern/CMakeFiles/StrategyPattern.dir/main.cpp.obj: CXX_COMPILER__StrategyPattern_unscanned_Debug C$:/Users/sahil/OneDrive/Documents/LLD/Design$ Pattern/Strategy$ Design$ Pattern/main.cpp || cmake_object_order_depends_target_StrategyPattern
+build Design$ Pattern/Observer$ Design$ Pattern/CMakeFiles/ObserverPattern.dir/main.cpp.obj: CXX_COMPILER__ObserverPattern_unscanned_Debug C$:/Users/sahil/OneDrive/Documents/LLD/Design$ Pattern/Observer$ Design$ Pattern/main.cpp || cmake_object_order_depends_target_ObserverPattern
   CONFIG = Debug
-  DEP_FILE = "Design Pattern\Strategy Design Pattern\CMakeFiles\StrategyPattern.dir\main.cpp.obj.d"
+  DEP_FILE = "Design Pattern\Observer Design Pattern\CMakeFiles\ObserverPattern.dir\main.cpp.obj.d"
   FLAGS = -g -std=gnu++20
-  OBJECT_DIR = "Design Pattern\Strategy Design Pattern\CMakeFiles\StrategyPattern.dir"
-  OBJECT_FILE_DIR = "Design Pattern\Strategy Design Pattern\CMakeFiles\StrategyPattern.dir"
-  TARGET_SUPPORT_DIR = "Design Pattern\Strategy Design Pattern\CMakeFiles\StrategyPattern.dir"
-  depfile = Design Pattern\Strategy Design Pattern\CMakeFiles\StrategyPattern.dir\main.cpp.obj.d
-
-build Design$ Pattern/Strategy$ Design$ Pattern/CMakeFiles/StrategyPattern.dir/Batsman.cpp.obj: CXX_COMPILER__StrategyPattern_unscanned_Debug C$:/Users/sahil/OneDrive/Documents/LLD/Design$ Pattern/Strategy$ Design$ Pattern/Batsman.cpp || cmake_object_order_depends_target_StrategyPattern
-  CONFIG = Debug
-  DEP_FILE = "Design Pattern\Strategy Design Pattern\CMakeFiles\StrategyPattern.dir\Batsman.cpp.obj.d"
-  FLAGS = -g -std=gnu++20
-  OBJECT_DIR = "Design Pattern\Strategy Design Pattern\CMakeFiles\StrategyPattern.dir"
-  OBJECT_FILE_DIR = "Design Pattern\Strategy Design Pattern\CMakeFiles\StrategyPattern.dir"
-  TARGET_SUPPORT_DIR = "Design Pattern\Strategy Design Pattern\CMakeFiles\StrategyPattern.dir"
-  depfile = Design Pattern\Strategy Design Pattern\CMakeFiles\StrategyPattern.dir\Batsman.cpp.obj.d
+  OBJECT_DIR = "Design Pattern\Observer Design Pattern\CMakeFiles\ObserverPattern.dir"
+  OBJECT_FILE_DIR = "Design Pattern\Observer Design Pattern\CMakeFiles\ObserverPattern.dir"
+  TARGET_SUPPORT_DIR = "Design Pattern\Observer Design Pattern\CMakeFiles\ObserverPattern.dir"
+  depfile = Design Pattern\Observer Design Pattern\CMakeFiles\ObserverPattern.dir\main.cpp.obj.d
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target StrategyPattern
+# Link build statements for EXECUTABLE target ObserverPattern
 
 
 #############################################
-# Link the executable Design Pattern\Strategy Design Pattern\StrategyPattern.exe
+# Link the executable Design Pattern\Observer Design Pattern\ObserverPattern.exe
 
-build Design$ Pattern/Strategy$ Design$ Pattern/StrategyPattern.exe: CXX_EXECUTABLE_LINKER__StrategyPattern_Debug Design$ Pattern/Strategy$ Design$ Pattern/CMakeFiles/StrategyPattern.dir/main.cpp.obj Design$ Pattern/Strategy$ Design$ Pattern/CMakeFiles/StrategyPattern.dir/Batsman.cpp.obj
+build Design$ Pattern/Observer$ Design$ Pattern/ObserverPattern.exe: CXX_EXECUTABLE_LINKER__ObserverPattern_Debug Design$ Pattern/Observer$ Design$ Pattern/CMakeFiles/ObserverPattern.dir/main.cpp.obj
   CONFIG = Debug
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = "Design Pattern\Strategy Design Pattern\CMakeFiles\StrategyPattern.dir"
+  OBJECT_DIR = "Design Pattern\Observer Design Pattern\CMakeFiles\ObserverPattern.dir"
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_FILE = "Design Pattern\Strategy Design Pattern\StrategyPattern.exe"
-  TARGET_IMPLIB = "Design Pattern\Strategy Design Pattern\libStrategyPattern.dll.a"
-  TARGET_PDB = StrategyPattern.exe.dbg
-  TARGET_SUPPORT_DIR = "Design Pattern\Strategy Design Pattern\CMakeFiles\StrategyPattern.dir"
+  TARGET_FILE = "Design Pattern\Observer Design Pattern\ObserverPattern.exe"
+  TARGET_IMPLIB = "Design Pattern\Observer Design Pattern\libObserverPattern.dll.a"
+  TARGET_PDB = ObserverPattern.exe.dbg
+  TARGET_SUPPORT_DIR = "Design Pattern\Observer Design Pattern\CMakeFiles\ObserverPattern.dir"
 
 
 #############################################
 # Utility command for edit_cache
 
-build Design$ Pattern/Strategy$ Design$ Pattern/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D "C:\Users\sahil\OneDrive\Documents\LLD\build\Design Pattern\Strategy Design Pattern" && C:\msys64\ucrt64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
+build Design$ Pattern/Observer$ Design$ Pattern/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D "C:\Users\sahil\OneDrive\Documents\LLD\build\Design Pattern\Observer Design Pattern" && C:\msys64\ucrt64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
-build Design$ Pattern/Strategy$ Design$ Pattern/edit_cache: phony Design$ Pattern/Strategy$ Design$ Pattern/CMakeFiles/edit_cache.util
+build Design$ Pattern/Observer$ Design$ Pattern/edit_cache: phony Design$ Pattern/Observer$ Design$ Pattern/CMakeFiles/edit_cache.util
 
 
 #############################################
 # Utility command for rebuild_cache
 
-build Design$ Pattern/Strategy$ Design$ Pattern/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D "C:\Users\sahil\OneDrive\Documents\LLD\build\Design Pattern\Strategy Design Pattern" && C:\msys64\ucrt64\bin\cmake.exe --regenerate-during-build -SC:\Users\sahil\OneDrive\Documents\LLD -BC:\Users\sahil\OneDrive\Documents\LLD\build"
+build Design$ Pattern/Observer$ Design$ Pattern/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D "C:\Users\sahil\OneDrive\Documents\LLD\build\Design Pattern\Observer Design Pattern" && C:\msys64\ucrt64\bin\cmake.exe --regenerate-during-build -SC:\Users\sahil\OneDrive\Documents\LLD -BC:\Users\sahil\OneDrive\Documents\LLD\build"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
 
-build Design$ Pattern/Strategy$ Design$ Pattern/rebuild_cache: phony Design$ Pattern/Strategy$ Design$ Pattern/CMakeFiles/rebuild_cache.util
+build Design$ Pattern/Observer$ Design$ Pattern/rebuild_cache: phony Design$ Pattern/Observer$ Design$ Pattern/CMakeFiles/rebuild_cache.util
 
 # =============================================================================
 # Target aliases.
@@ -210,9 +201,9 @@ build HelloCpp: phony HelloCpp/HelloCpp.exe
 
 build HelloCpp.exe: phony HelloCpp/HelloCpp.exe
 
-build StrategyPattern: phony Design$ Pattern/Strategy$ Design$ Pattern/StrategyPattern.exe
+build ObserverPattern: phony Design$ Pattern/Observer$ Design$ Pattern/ObserverPattern.exe
 
-build StrategyPattern.exe: phony Design$ Pattern/Strategy$ Design$ Pattern/StrategyPattern.exe
+build ObserverPattern.exe: phony Design$ Pattern/Observer$ Design$ Pattern/ObserverPattern.exe
 
 # =============================================================================
 # Folder targets.
@@ -222,14 +213,14 @@ build StrategyPattern.exe: phony Design$ Pattern/Strategy$ Design$ Pattern/Strat
 #############################################
 # Folder: C:/Users/sahil/OneDrive/Documents/LLD/build
 
-build all: phony HelloCpp/all Design$ Pattern/Strategy$ Design$ Pattern/all
+build all: phony HelloCpp/all Design$ Pattern/Observer$ Design$ Pattern/all
 
 # =============================================================================
 
 #############################################
-# Folder: C:/Users/sahil/OneDrive/Documents/LLD/build/Design Pattern/Strategy Design Pattern
+# Folder: C:/Users/sahil/OneDrive/Documents/LLD/build/Design Pattern/Observer Design Pattern
 
-build Design$ Pattern/Strategy$ Design$ Pattern/all: phony Design$ Pattern/Strategy$ Design$ Pattern/StrategyPattern.exe
+build Design$ Pattern/Observer$ Design$ Pattern/all: phony Design$ Pattern/Observer$ Design$ Pattern/ObserverPattern.exe
 
 # =============================================================================
 
@@ -245,14 +236,14 @@ build HelloCpp/all: phony HelloCpp/HelloCpp.exe
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja C$:/Users/sahil/OneDrive/Documents/LLD/build/cmake_install.cmake C$:/Users/sahil/OneDrive/Documents/LLD/build/HelloCpp/cmake_install.cmake C$:/Users/sahil/OneDrive/Documents/LLD/build/Design$ Pattern/Strategy$ Design$ Pattern/cmake_install.cmake: RERUN_CMAKE | C$:/Users/sahil/OneDrive/Documents/LLD/CMakeLists.txt C$:/Users/sahil/OneDrive/Documents/LLD/Design$ Pattern/Strategy$ Design$ Pattern/CMakeLists.txt C$:/Users/sahil/OneDrive/Documents/LLD/HelloCpp/CMakeLists.txt C$:/msys64/ucrt64/share/cmake/Modules/CMakeCInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeCXXInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeCommonLanguageInclude.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeGenericSystem.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeInitializeConfigs.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeLanguageInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeRCInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeSystemSpecificInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Internal/CMakeCLinkerInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/Linker/GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Linker/GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Linker/GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Linker/GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Linker/Windows-GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Linker/Windows-GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Linker/Windows-GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-Initialize.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-windres.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/4.3.3/CMakeCCompiler.cmake CMakeFiles/4.3.3/CMakeCXXCompiler.cmake CMakeFiles/4.3.3/CMakeRCCompiler.cmake CMakeFiles/4.3.3/CMakeSystem.cmake
+build build.ninja C$:/Users/sahil/OneDrive/Documents/LLD/build/cmake_install.cmake C$:/Users/sahil/OneDrive/Documents/LLD/build/HelloCpp/cmake_install.cmake C$:/Users/sahil/OneDrive/Documents/LLD/build/Design$ Pattern/Observer$ Design$ Pattern/cmake_install.cmake: RERUN_CMAKE | C$:/Users/sahil/OneDrive/Documents/LLD/CMakeLists.txt C$:/Users/sahil/OneDrive/Documents/LLD/Design$ Pattern/Observer$ Design$ Pattern/CMakeLists.txt C$:/Users/sahil/OneDrive/Documents/LLD/HelloCpp/CMakeLists.txt C$:/msys64/ucrt64/share/cmake/Modules/CMakeCInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeCXXInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeCommonLanguageInclude.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeGenericSystem.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeInitializeConfigs.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeLanguageInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeRCInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeSystemSpecificInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Internal/CMakeCLinkerInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/Linker/GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Linker/GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Linker/GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Linker/GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Linker/Windows-GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Linker/Windows-GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Linker/Windows-GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-Initialize.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-windres.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/4.3.3/CMakeCCompiler.cmake CMakeFiles/4.3.3/CMakeCXXCompiler.cmake CMakeFiles/4.3.3/CMakeRCCompiler.cmake CMakeFiles/4.3.3/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build C$:/Users/sahil/OneDrive/Documents/LLD/CMakeLists.txt C$:/Users/sahil/OneDrive/Documents/LLD/Design$ Pattern/Strategy$ Design$ Pattern/CMakeLists.txt C$:/Users/sahil/OneDrive/Documents/LLD/HelloCpp/CMakeLists.txt C$:/msys64/ucrt64/share/cmake/Modules/CMakeCInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeCXXInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeCommonLanguageInclude.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeGenericSystem.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeInitializeConfigs.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeLanguageInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeRCInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeSystemSpecificInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Internal/CMakeCLinkerInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/Linker/GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Linker/GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Linker/GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Linker/GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Linker/Windows-GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Linker/Windows-GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Linker/Windows-GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-Initialize.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-windres.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/4.3.3/CMakeCCompiler.cmake CMakeFiles/4.3.3/CMakeCXXCompiler.cmake CMakeFiles/4.3.3/CMakeRCCompiler.cmake CMakeFiles/4.3.3/CMakeSystem.cmake: phony
+build C$:/Users/sahil/OneDrive/Documents/LLD/CMakeLists.txt C$:/Users/sahil/OneDrive/Documents/LLD/Design$ Pattern/Observer$ Design$ Pattern/CMakeLists.txt C$:/Users/sahil/OneDrive/Documents/LLD/HelloCpp/CMakeLists.txt C$:/msys64/ucrt64/share/cmake/Modules/CMakeCInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeCXXInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeCommonLanguageInclude.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeGenericSystem.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeInitializeConfigs.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeLanguageInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeRCInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeSystemSpecificInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Internal/CMakeCLinkerInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/Linker/GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Linker/GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Linker/GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Linker/GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Linker/Windows-GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Linker/Windows-GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Linker/Windows-GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-Initialize.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-windres.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/4.3.3/CMakeCCompiler.cmake CMakeFiles/4.3.3/CMakeCXXCompiler.cmake CMakeFiles/4.3.3/CMakeRCCompiler.cmake CMakeFiles/4.3.3/CMakeSystem.cmake: phony
 
 
 #############################################

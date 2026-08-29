@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "Design Pattern/Strategy Design Pattern/StrategyPattern.exe"
+			"path" : "Design Pattern/Observer Design Pattern/ObserverPattern.exe"
 		},
 		{
-			"path" : "Design Pattern/Strategy Design Pattern/StrategyPattern.pdb"
+			"path" : "Design Pattern/Observer Design Pattern/ObserverPattern.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -17,7 +17,7 @@
 		],
 		"files" : 
 		[
-			"Design Pattern/Strategy Design Pattern/CMakeLists.txt"
+			"Design Pattern/Observer Design Pattern/CMakeLists.txt"
 		],
 		"nodes" : 
 		[
@@ -57,12 +57,11 @@
 			},
 			"sourceIndexes" : 
 			[
-				0,
-				1
+				0
 			]
 		}
 	],
-	"id" : "StrategyPattern::@bc98839d513ee17f7908",
+	"id" : "ObserverPattern::@63515a4e676532ff342a",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -78,12 +77,12 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "StrategyPattern",
-	"nameOnDisk" : "StrategyPattern.exe",
+	"name" : "ObserverPattern",
+	"nameOnDisk" : "ObserverPattern.exe",
 	"paths" : 
 	{
-		"build" : "Design Pattern/Strategy Design Pattern",
-		"source" : "Design Pattern/Strategy Design Pattern"
+		"build" : "Design Pattern/Observer Design Pattern",
+		"source" : "Design Pattern/Observer Design Pattern"
 	},
 	"sourceGroups" : 
 	[
@@ -91,8 +90,7 @@
 			"name" : "Source Files",
 			"sourceIndexes" : 
 			[
-				0,
-				1
+				0
 			]
 		}
 	],
@@ -101,13 +99,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "Design Pattern/Strategy Design Pattern/main.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "Design Pattern/Strategy Design Pattern/Batsman.cpp",
+			"path" : "Design Pattern/Observer Design Pattern/main.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

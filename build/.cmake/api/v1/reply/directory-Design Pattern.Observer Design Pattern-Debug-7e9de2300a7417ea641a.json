@@ -13,7 +13,7 @@
 	"installers" : [],
 	"paths" : 
 	{
-		"build" : "Design Pattern/Strategy Design Pattern",
-		"source" : "Design Pattern/Strategy Design Pattern"
+		"build" : "Design Pattern/Observer Design Pattern",
+		"source" : "Design Pattern/Observer Design Pattern"
 	}
 }
