@@ -1,20 +1,30 @@
-Interface Segregation Principle (ISP) says:
+# Interface Segregation Principle (ISP)
 
-A class should not be forced to depend on methods that it does not use.
+## Definition
 
-Simple way to remember
+> A class should not be forced to depend on methods that it does not use.
 
-"Don't create fat interfaces. Keep interfaces small and focused."
+### Simple way to remember
 
-❌ Bad Example
+> **"Don't create fat interfaces. Keep interfaces small and focused."**
+
+---
+
+## Simple Example
+
+### ❌ Bad Design
+
+```cpp
 class Worker {
 public:
     virtual void work() = 0;
     virtual void eat() = 0;
 };
+```
 
-Now suppose we have a Robot:
+Now suppose we have a `Robot`:
 
+```cpp
 class Robot : public Worker {
 public:
     void work() override {
@@ -25,15 +35,19 @@ public:
         // Robot doesn't eat!
     }
 };
+```
 
-The Robot is forced to implement eat() even though it doesn't need it.
+The `Robot` is forced to implement `eat()` even though it doesn't need it.
 
 That's an ISP violation.
 
-✅ Good Design
+---
+
+### ✅ Good Design
 
 Split the interface:
 
+```cpp
 class Workable {
 public:
     virtual void work() = 0;
@@ -43,9 +57,11 @@ class Eatable {
 public:
     virtual void eat() = 0;
 };
+```
 
 Now:
 
+```cpp
 class Human : public Workable, public Eatable {
 public:
     void work() override {}
@@ -56,3 +72,4 @@ class Robot : public Workable {
 public:
     void work() override {}
 };
+```

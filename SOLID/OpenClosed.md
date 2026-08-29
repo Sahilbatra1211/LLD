@@ -28,29 +28,37 @@ public:
         }
     }
 };
+```
 
 Now suppose we want to add PayPal:
 
+```text
 Add PayPal
     ↓
 Modify PaymentProcessor
+```
 
 If we keep adding payment methods, we keep modifying the same class.
 
 This violates OCP.
 
-✅ Good Design
+---
+
+### ✅ Good Design
 
 Create an abstraction:
 
+```cpp
 class PaymentMethod {
 public:
     virtual void pay(double amount) = 0;
     virtual ~PaymentMethod() = default;
 };
+```
 
 Create different implementations:
 
+```cpp
 class CardPayment : public PaymentMethod {
 public:
     void pay(double amount) override {
@@ -64,9 +72,11 @@ public:
         // UPI payment
     }
 };
+```
 
 The processor uses the abstraction:
 
+```cpp
 class PaymentProcessor {
 private:
     PaymentMethod& paymentMethod;
@@ -79,16 +89,19 @@ public:
         paymentMethod.pay(amount);
     }
 };
+```
 
 Now, to add PayPal:
 
+```cpp
 class PayPalPayment : public PaymentMethod {
 public:
     void pay(double amount) override {
         // PayPal payment
     }
 };
+```
 
 We simply add a new class.
 
-We don't need to modify PaymentProcessor.
+We don't need to modify `PaymentProcessor`.

@@ -27,23 +27,26 @@ public:
         // send email
     }
 };
+```
 
-The User class has two responsibilities:
+The `User` class has two responsibilities:
 
-Managing user-related data
-Sending emails
-Saving data to the database
+- Managing user-related data
+- Sending emails
+- Saving data to the database
 
 So it has multiple reasons to change.
 
-✅ Good Design
+---
+
+### ✅ Good Design
 
 Separate the responsibilities:
 
+```cpp
 class User {
     // User data and user-related behavior
 };
-
 
 class UserRepository {
 public:
@@ -52,10 +55,10 @@ public:
     }
 };
 
-
 class EmailService {
 public:
     void sendEmail(const User& user) {
         // send email
     }
 };
+```

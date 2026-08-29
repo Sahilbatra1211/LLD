@@ -1,13 +1,18 @@
-Liskov Substitution Principle (LSP) says:
+# Liskov Substitution Principle (LSP)
 
-Objects of a child/derived class should be able to replace objects of the parent/base class without breaking the correctness of the program.
+## Definition
 
-Simple way to remember
+> Objects of a child/derived class should be able to replace objects of the parent/base class without breaking the correctness of the program.
 
-"Child should be substitutable for parent."
+### Simple way to remember
 
-Example:
+> **"Child should be substitutable for parent."**
 
+---
+
+## Simple Example
+
+```cpp
 class Bird {
 public:
     virtual void fly() = 0;
@@ -19,33 +24,44 @@ public:
         // Sparrow can fly
     }
 };
+```
 
-This makes sense because Sparrow can behave like a Bird:
+This makes sense because `Sparrow` can behave like a `Bird`:
 
+```cpp
 Bird* bird = new Sparrow();
 bird->fly();   // Works correctly
+```
 
 But:
 
+```cpp
 class Penguin : public Bird {
 public:
     void fly() override {
         throw runtime_error("Penguin cannot fly");
     }
 };
+```
 
 Now:
 
+```cpp
 Bird* bird = new Penguin();
 bird->fly();   // Breaks the expected behavior
+```
 
-The problem is that Bird promised:
+The problem is that `Bird` promised:
 
-Any Bird can fly().
+> Any `Bird` can `fly()`.
 
-But Penguin cannot satisfy that contract.
+But `Penguin` cannot satisfy that contract.
 
-Better design
+---
+
+## Better Design
+
+```cpp
 class Bird {
 };
 
@@ -63,3 +79,4 @@ public:
 
 class Penguin : public Bird {
 };
+```
