@@ -248,6 +248,15 @@ CMAKE_TAPI:FILEPATH=CMAKE_TAPI-NOTFOUND
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
 //Value Computed by CMake
+FactoryPattern_BINARY_DIR:STATIC=C:/Users/sahil/OneDrive/Documents/LLD/build/Design Pattern/Factory Design Pattern
+
+//Value Computed by CMake
+FactoryPattern_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+FactoryPattern_SOURCE_DIR:STATIC=C:/Users/sahil/OneDrive/Documents/LLD/Design Pattern/Factory Design Pattern
+
+//Value Computed by CMake
 HelloCpp_BINARY_DIR:STATIC=C:/Users/sahil/OneDrive/Documents/LLD/build/HelloCpp
 
 //Value Computed by CMake
@@ -291,6 +300,15 @@ StrategyPattern_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
 StrategyPattern_SOURCE_DIR:STATIC=C:/Users/sahil/OneDrive/Documents/LLD/Design Pattern/Strategy Design Pattern
+
+//Value Computed by CMake
+TicTacToe_BINARY_DIR:STATIC=C:/Users/sahil/OneDrive/Documents/LLD/build/Questions/Tic Tac Toe
+
+//Value Computed by CMake
+TicTacToe_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+TicTacToe_SOURCE_DIR:STATIC=C:/Users/sahil/OneDrive/Documents/LLD/Questions/Tic Tac Toe
 
 
 ########################

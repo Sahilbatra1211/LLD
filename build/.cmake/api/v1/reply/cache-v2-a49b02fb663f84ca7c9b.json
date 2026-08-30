@@ -1310,6 +1310,42 @@
 			"value" : "FALSE"
 		},
 		{
+			"name" : "FactoryPattern_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "C:/Users/sahil/OneDrive/Documents/LLD/build/Design Pattern/Factory Design Pattern"
+		},
+		{
+			"name" : "FactoryPattern_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "OFF"
+		},
+		{
+			"name" : "FactoryPattern_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "C:/Users/sahil/OneDrive/Documents/LLD/Design Pattern/Factory Design Pattern"
+		},
+		{
 			"name" : "HelloCpp_BINARY_DIR",
 			"properties" : 
 			[
@@ -1488,6 +1524,42 @@
 			],
 			"type" : "STATIC",
 			"value" : "C:/Users/sahil/OneDrive/Documents/LLD/Design Pattern/Strategy Design Pattern"
+		},
+		{
+			"name" : "TicTacToe_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "C:/Users/sahil/OneDrive/Documents/LLD/build/Questions/Tic Tac Toe"
+		},
+		{
+			"name" : "TicTacToe_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "OFF"
+		},
+		{
+			"name" : "TicTacToe_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "C:/Users/sahil/OneDrive/Documents/LLD/Questions/Tic Tac Toe"
 		}
 	],
 	"kind" : "cache",

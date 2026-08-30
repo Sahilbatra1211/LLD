@@ -20,15 +20,15 @@
 					"source" : "."
 				},
 				{
-					"build" : "Design Pattern/Singleton Pattern",
-					"jsonFile" : "directory-Design Pattern.Singleton Pattern-Debug-913806049fe033ac0a4f.json",
+					"build" : "Questions/Tic Tac Toe",
+					"jsonFile" : "directory-Questions.Tic Tac Toe-Debug-3012197a30856b55f516.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.20"
 					},
 					"parentIndex" : 0,
 					"projectIndex" : 1,
-					"source" : "Design Pattern/Singleton Pattern",
+					"source" : "Questions/Tic Tac Toe",
 					"targetIndexes" : 
 					[
 						0
@@ -54,7 +54,7 @@
 					[
 						1
 					],
-					"name" : "SingletonPattern",
+					"name" : "TicTacToe",
 					"parentIndex" : 0,
 					"targetIndexes" : 
 					[
@@ -66,9 +66,9 @@
 			[
 				{
 					"directoryIndex" : 1,
-					"id" : "SingletonPattern::@bcebe3e841e68d769d20",
-					"jsonFile" : "target-SingletonPattern-Debug-7fbe8f313c7186037e6f.json",
-					"name" : "SingletonPattern",
+					"id" : "TicTacToe::@06028e5fe97d0a15291b",
+					"jsonFile" : "target-TicTacToe-Debug-c884e947632fbf5c3702.json",
+					"name" : "TicTacToe",
 					"projectIndex" : 1
 				}
 			]

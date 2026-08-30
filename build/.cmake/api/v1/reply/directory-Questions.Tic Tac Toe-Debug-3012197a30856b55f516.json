@@ -13,7 +13,7 @@
 	"installers" : [],
 	"paths" : 
 	{
-		"build" : "Design Pattern/Singleton Pattern",
-		"source" : "Design Pattern/Singleton Pattern"
+		"build" : "Questions/Tic Tac Toe",
+		"source" : "Questions/Tic Tac Toe"
 	}
 }

@@ -1,0 +1,5 @@
+CompileFlags:
+  Compiler: C:/msys64/ucrt64/bin/g++.exe
+
+Diagnostics:
+  MissingIncludes: Strict

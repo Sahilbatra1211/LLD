@@ -4,27 +4,25 @@
 4	1315	8097070275122813	Design Pattern/Strategy Design Pattern/CMakeFiles/StrategyPattern.dir/main.cpp.obj	ee93f0098dd10f32
 1315	1412	8097070288237518	Design Pattern/Strategy Design Pattern/StrategyPattern.exe	2ba4230e988d8103
 58	1413	8097068517666182	Design Pattern/Strategy Design Pattern/CMakeFiles/StrategyPattern.dir/Batsman.cpp.obj	2785ad4104d98c26
-56	285	8097142525265584	build.ninja	8c5d4f58b9d6ae74
-56	285	8097142525205592	C:/Users/sahil/OneDrive/Documents/LLD/build/cmake_install.cmake	8c5d4f58b9d6ae74
+32	330	8097868560166328	build.ninja	8c5d4f58b9d6ae74
+32	330	8097868560082129	C:/Users/sahil/OneDrive/Documents/LLD/build/cmake_install.cmake	8c5d4f58b9d6ae74
 56	285	8097142256523103	C:/Users/sahil/OneDrive/Documents/LLD/build/HelloCpp/cmake_install.cmake	8c5d4f58b9d6ae74
 5	425	8097085559889680	C:/Users/sahil/OneDrive/Documents/LLD/build/Design Pattern/Strategy Design Pattern/cmake_install.cmake	8c5d4f58b9d6ae74
 4	1571	8097136984072416	Design Pattern/Observer Design Pattern/CMakeFiles/ObserverPattern.dir/main.cpp.obj	e5bfb4ed44ef92b8
 1572	1728	8097136999747625	Design Pattern/Observer Design Pattern/ObserverPattern.exe	3a88afb11650ee97
 56	285	8097142148043401	C:/Users/sahil/OneDrive/Documents/LLD/build/Design Pattern/Observer Design Pattern/cmake_install.cmake	8c5d4f58b9d6ae74
-32	1419	8097142352261788	Design Pattern/Singleton Pattern/CMakeFiles/SingletonPattern.dir/main.cpp.obj	c7f3a892f6f4df22
-1419	1565	8097142366128285	Design Pattern/Singleton Pattern/SingletonPattern.exe	d307fc4402f3029c
-53	288	8097142525265584	build.ninja	8c5d4f58b9d6ae74
-53	288	8097142525265584	C:/Users/sahil/OneDrive/Documents/LLD/build/cmake_install.cmake	8c5d4f58b9d6ae74
-53	288	8097142525265584	C:/Users/sahil/OneDrive/Documents/LLD/build/Design Pattern/Singleton Pattern/cmake_install.cmake	8c5d4f58b9d6ae74
-3	1340	8097153329308282	Design Pattern/Singleton Pattern/CMakeFiles/SingletonPattern.dir/main.cpp.obj	c7f3a892f6f4df22
-64	1426	8097153621748058	Design Pattern/Singleton Pattern/CMakeFiles/SingletonPattern.dir/main.cpp.obj	c7f3a892f6f4df22
-47	1335	8097154560892879	Design Pattern/Singleton Pattern/CMakeFiles/SingletonPattern.dir/main.cpp.obj	c7f3a892f6f4df22
-1336	1441	8097154573785308	Design Pattern/Singleton Pattern/SingletonPattern.exe	d307fc4402f3029c
-56	1441	8097155132556158	Design Pattern/Singleton Pattern/CMakeFiles/SingletonPattern.dir/main.cpp.obj	c7f3a892f6f4df22
-1441	1546	8097155146408769	Design Pattern/Singleton Pattern/SingletonPattern.exe	d307fc4402f3029c
-6	1350	8097155395398101	Design Pattern/Singleton Pattern/CMakeFiles/SingletonPattern.dir/main.cpp.obj	c7f3a892f6f4df22
-1350	1462	8097155408836309	Design Pattern/Singleton Pattern/SingletonPattern.exe	d307fc4402f3029c
-4	1412	8097158722452616	Design Pattern/Singleton Pattern/CMakeFiles/SingletonPattern.dir/main.cpp.obj	c7f3a892f6f4df22
-1412	1575	8097158736528120	Design Pattern/Singleton Pattern/SingletonPattern.exe	d307fc4402f3029c
 45	1427	8097158913265168	Design Pattern/Singleton Pattern/CMakeFiles/SingletonPattern.dir/main.cpp.obj	c7f3a892f6f4df22
 1427	1586	8097158927080378	Design Pattern/Singleton Pattern/SingletonPattern.exe	d307fc4402f3029c
+53	288	8097142525265584	C:/Users/sahil/OneDrive/Documents/LLD/build/Design Pattern/Singleton Pattern/cmake_install.cmake	8c5d4f58b9d6ae74
+55	1478	8097181673403161	Design Pattern/Factory Design Pattern/CMakeFiles/FactoryPattern.dir/main.cpp.obj	1ba07d7b1154e09f
+1478	1608	8097181687637916	Design Pattern/Factory Design Pattern/FactoryPattern.exe	e92bea9a73eaa124
+32	330	8097833615636904	C:/Users/sahil/OneDrive/Documents/LLD/build/Design Pattern/Factory Design Pattern/cmake_install.cmake	8c5d4f58b9d6ae74
+24	13526	8097833617460603	Questions/Tic Tac Toe/CMakeFiles/TicTacToe.dir/main.cpp.obj	b7cf6242f7564b41
+13528	14536	8097833752498793	Questions/Tic Tac Toe/TicTacToe.exe	e84ef7735326dc06
+4	1777	8097910086120633	Questions/Tic Tac Toe/CMakeFiles/TicTacToe.dir/main.cpp.obj	b7cf6242f7564b41
+59	1642	8097910514584307	Questions/Tic Tac Toe/CMakeFiles/TicTacToe.dir/main.cpp.obj	b7cf6242f7564b41
+1642	1778	8097910530404561	Questions/Tic Tac Toe/TicTacToe.exe	e84ef7735326dc06
+4	1590	8097911122929921	Questions/Tic Tac Toe/CMakeFiles/TicTacToe.dir/main.cpp.obj	b7cf6242f7564b41
+1590	1705	8097911138789189	Questions/Tic Tac Toe/TicTacToe.exe	e84ef7735326dc06
+3	1524	8097912429134060	Questions/Tic Tac Toe/CMakeFiles/TicTacToe.dir/main.cpp.obj	b7cf6242f7564b41
+1524	1633	8097912444338167	Questions/Tic Tac Toe/TicTacToe.exe	e84ef7735326dc06

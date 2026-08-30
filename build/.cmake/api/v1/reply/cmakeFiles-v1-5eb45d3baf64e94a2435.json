@@ -216,7 +216,7 @@
 			"path" : "C:/msys64/ucrt64/share/cmake/Modules/Platform/Linker/Windows-GNU.cmake"
 		},
 		{
-			"path" : "Design Pattern/Singleton Pattern/CMakeLists.txt"
+			"path" : "Questions/Tic Tac Toe/CMakeLists.txt"
 		}
 	],
 	"kind" : "cmakeFiles",

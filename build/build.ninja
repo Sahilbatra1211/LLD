@@ -69,72 +69,72 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 
 # =============================================================================
-# Object build statements for EXECUTABLE target SingletonPattern
+# Object build statements for EXECUTABLE target TicTacToe
 
 
 #############################################
-# Order-only phony target for SingletonPattern
+# Order-only phony target for TicTacToe
 
-build cmake_object_order_depends_target_SingletonPattern: phony || .
+build cmake_object_order_depends_target_TicTacToe: phony || .
 
-build Design$ Pattern/Singleton$ Pattern/CMakeFiles/SingletonPattern.dir/main.cpp.obj: CXX_COMPILER__SingletonPattern_unscanned_Debug C$:/Users/sahil/OneDrive/Documents/LLD/Design$ Pattern/Singleton$ Pattern/main.cpp || cmake_object_order_depends_target_SingletonPattern
+build Questions/Tic$ Tac$ Toe/CMakeFiles/TicTacToe.dir/main.cpp.obj: CXX_COMPILER__TicTacToe_unscanned_Debug C$:/Users/sahil/OneDrive/Documents/LLD/Questions/Tic$ Tac$ Toe/main.cpp || cmake_object_order_depends_target_TicTacToe
   CONFIG = Debug
-  DEP_FILE = "Design Pattern\Singleton Pattern\CMakeFiles\SingletonPattern.dir\main.cpp.obj.d"
+  DEP_FILE = "Questions\Tic Tac Toe\CMakeFiles\TicTacToe.dir\main.cpp.obj.d"
   FLAGS = -g -std=gnu++20
-  OBJECT_DIR = "Design Pattern\Singleton Pattern\CMakeFiles\SingletonPattern.dir"
-  OBJECT_FILE_DIR = "Design Pattern\Singleton Pattern\CMakeFiles\SingletonPattern.dir"
-  TARGET_SUPPORT_DIR = "Design Pattern\Singleton Pattern\CMakeFiles\SingletonPattern.dir"
-  depfile = Design Pattern\Singleton Pattern\CMakeFiles\SingletonPattern.dir\main.cpp.obj.d
+  OBJECT_DIR = "Questions\Tic Tac Toe\CMakeFiles\TicTacToe.dir"
+  OBJECT_FILE_DIR = "Questions\Tic Tac Toe\CMakeFiles\TicTacToe.dir"
+  TARGET_SUPPORT_DIR = "Questions\Tic Tac Toe\CMakeFiles\TicTacToe.dir"
+  depfile = Questions\Tic Tac Toe\CMakeFiles\TicTacToe.dir\main.cpp.obj.d
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target SingletonPattern
+# Link build statements for EXECUTABLE target TicTacToe
 
 
 #############################################
-# Link the executable Design Pattern\Singleton Pattern\SingletonPattern.exe
+# Link the executable Questions\Tic Tac Toe\TicTacToe.exe
 
-build Design$ Pattern/Singleton$ Pattern/SingletonPattern.exe: CXX_EXECUTABLE_LINKER__SingletonPattern_Debug Design$ Pattern/Singleton$ Pattern/CMakeFiles/SingletonPattern.dir/main.cpp.obj
+build Questions/Tic$ Tac$ Toe/TicTacToe.exe: CXX_EXECUTABLE_LINKER__TicTacToe_Debug Questions/Tic$ Tac$ Toe/CMakeFiles/TicTacToe.dir/main.cpp.obj
   CONFIG = Debug
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = "Design Pattern\Singleton Pattern\CMakeFiles\SingletonPattern.dir"
+  OBJECT_DIR = "Questions\Tic Tac Toe\CMakeFiles\TicTacToe.dir"
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_FILE = "Design Pattern\Singleton Pattern\SingletonPattern.exe"
-  TARGET_IMPLIB = "Design Pattern\Singleton Pattern\libSingletonPattern.dll.a"
-  TARGET_PDB = SingletonPattern.exe.dbg
-  TARGET_SUPPORT_DIR = "Design Pattern\Singleton Pattern\CMakeFiles\SingletonPattern.dir"
+  TARGET_FILE = "Questions\Tic Tac Toe\TicTacToe.exe"
+  TARGET_IMPLIB = "Questions\Tic Tac Toe\libTicTacToe.dll.a"
+  TARGET_PDB = TicTacToe.exe.dbg
+  TARGET_SUPPORT_DIR = "Questions\Tic Tac Toe\CMakeFiles\TicTacToe.dir"
 
 
 #############################################
 # Utility command for edit_cache
 
-build Design$ Pattern/Singleton$ Pattern/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D "C:\Users\sahil\OneDrive\Documents\LLD\build\Design Pattern\Singleton Pattern" && C:\msys64\ucrt64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
+build Questions/Tic$ Tac$ Toe/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D "C:\Users\sahil\OneDrive\Documents\LLD\build\Questions\Tic Tac Toe" && C:\msys64\ucrt64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
-build Design$ Pattern/Singleton$ Pattern/edit_cache: phony Design$ Pattern/Singleton$ Pattern/CMakeFiles/edit_cache.util
+build Questions/Tic$ Tac$ Toe/edit_cache: phony Questions/Tic$ Tac$ Toe/CMakeFiles/edit_cache.util
 
 
 #############################################
 # Utility command for rebuild_cache
 
-build Design$ Pattern/Singleton$ Pattern/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D "C:\Users\sahil\OneDrive\Documents\LLD\build\Design Pattern\Singleton Pattern" && C:\msys64\ucrt64\bin\cmake.exe --regenerate-during-build -SC:\Users\sahil\OneDrive\Documents\LLD -BC:\Users\sahil\OneDrive\Documents\LLD\build"
+build Questions/Tic$ Tac$ Toe/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D "C:\Users\sahil\OneDrive\Documents\LLD\build\Questions\Tic Tac Toe" && C:\msys64\ucrt64\bin\cmake.exe --regenerate-during-build -SC:\Users\sahil\OneDrive\Documents\LLD -BC:\Users\sahil\OneDrive\Documents\LLD\build"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
 
-build Design$ Pattern/Singleton$ Pattern/rebuild_cache: phony Design$ Pattern/Singleton$ Pattern/CMakeFiles/rebuild_cache.util
+build Questions/Tic$ Tac$ Toe/rebuild_cache: phony Questions/Tic$ Tac$ Toe/CMakeFiles/rebuild_cache.util
 
 # =============================================================================
 # Target aliases.
 
-build SingletonPattern: phony Design$ Pattern/Singleton$ Pattern/SingletonPattern.exe
+build TicTacToe: phony Questions/Tic$ Tac$ Toe/TicTacToe.exe
 
-build SingletonPattern.exe: phony Design$ Pattern/Singleton$ Pattern/SingletonPattern.exe
+build TicTacToe.exe: phony Questions/Tic$ Tac$ Toe/TicTacToe.exe
 
 # =============================================================================
 # Folder targets.
@@ -144,14 +144,14 @@ build SingletonPattern.exe: phony Design$ Pattern/Singleton$ Pattern/SingletonPa
 #############################################
 # Folder: C:/Users/sahil/OneDrive/Documents/LLD/build
 
-build all: phony Design$ Pattern/Singleton$ Pattern/all
+build all: phony Questions/Tic$ Tac$ Toe/all
 
 # =============================================================================
 
 #############################################
-# Folder: C:/Users/sahil/OneDrive/Documents/LLD/build/Design Pattern/Singleton Pattern
+# Folder: C:/Users/sahil/OneDrive/Documents/LLD/build/Questions/Tic Tac Toe
 
-build Design$ Pattern/Singleton$ Pattern/all: phony Design$ Pattern/Singleton$ Pattern/SingletonPattern.exe
+build Questions/Tic$ Tac$ Toe/all: phony Questions/Tic$ Tac$ Toe/TicTacToe.exe
 
 # =============================================================================
 # Built-in targets
@@ -160,14 +160,14 @@ build Design$ Pattern/Singleton$ Pattern/all: phony Design$ Pattern/Singleton$ P
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja C$:/Users/sahil/OneDrive/Documents/LLD/build/cmake_install.cmake C$:/Users/sahil/OneDrive/Documents/LLD/build/Design$ Pattern/Singleton$ Pattern/cmake_install.cmake: RERUN_CMAKE | C$:/Users/sahil/OneDrive/Documents/LLD/CMakeLists.txt C$:/Users/sahil/OneDrive/Documents/LLD/Design$ Pattern/Singleton$ Pattern/CMakeLists.txt C$:/msys64/ucrt64/share/cmake/Modules/CMakeCInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeCXXInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeCommonLanguageInclude.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeGenericSystem.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeInitializeConfigs.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeLanguageInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeRCInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeSystemSpecificInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Internal/CMakeCLinkerInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/Linker/GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Linker/GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Linker/GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Linker/GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Linker/Windows-GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Linker/Windows-GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Linker/Windows-GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-Initialize.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-windres.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/4.3.3/CMakeCCompiler.cmake CMakeFiles/4.3.3/CMakeCXXCompiler.cmake CMakeFiles/4.3.3/CMakeRCCompiler.cmake CMakeFiles/4.3.3/CMakeSystem.cmake
+build build.ninja C$:/Users/sahil/OneDrive/Documents/LLD/build/cmake_install.cmake C$:/Users/sahil/OneDrive/Documents/LLD/build/Questions/Tic$ Tac$ Toe/cmake_install.cmake: RERUN_CMAKE | C$:/Users/sahil/OneDrive/Documents/LLD/CMakeLists.txt C$:/Users/sahil/OneDrive/Documents/LLD/Questions/Tic$ Tac$ Toe/CMakeLists.txt C$:/msys64/ucrt64/share/cmake/Modules/CMakeCInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeCXXInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeCommonLanguageInclude.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeGenericSystem.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeInitializeConfigs.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeLanguageInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeRCInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeSystemSpecificInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Internal/CMakeCLinkerInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/Linker/GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Linker/GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Linker/GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Linker/GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Linker/Windows-GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Linker/Windows-GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Linker/Windows-GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-Initialize.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-windres.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/4.3.3/CMakeCCompiler.cmake CMakeFiles/4.3.3/CMakeCXXCompiler.cmake CMakeFiles/4.3.3/CMakeRCCompiler.cmake CMakeFiles/4.3.3/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build C$:/Users/sahil/OneDrive/Documents/LLD/CMakeLists.txt C$:/Users/sahil/OneDrive/Documents/LLD/Design$ Pattern/Singleton$ Pattern/CMakeLists.txt C$:/msys64/ucrt64/share/cmake/Modules/CMakeCInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeCXXInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeCommonLanguageInclude.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeGenericSystem.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeInitializeConfigs.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeLanguageInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeRCInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeSystemSpecificInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Internal/CMakeCLinkerInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/Linker/GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Linker/GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Linker/GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Linker/GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Linker/Windows-GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Linker/Windows-GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Linker/Windows-GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-Initialize.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-windres.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/4.3.3/CMakeCCompiler.cmake CMakeFiles/4.3.3/CMakeCXXCompiler.cmake CMakeFiles/4.3.3/CMakeRCCompiler.cmake CMakeFiles/4.3.3/CMakeSystem.cmake: phony
+build C$:/Users/sahil/OneDrive/Documents/LLD/CMakeLists.txt C$:/Users/sahil/OneDrive/Documents/LLD/Questions/Tic$ Tac$ Toe/CMakeLists.txt C$:/msys64/ucrt64/share/cmake/Modules/CMakeCInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeCXXInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeCommonLanguageInclude.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeGenericSystem.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeInitializeConfigs.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeLanguageInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeRCInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeSystemSpecificInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Internal/CMakeCLinkerInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/Linker/GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Linker/GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Linker/GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Linker/GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Linker/Windows-GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Linker/Windows-GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Linker/Windows-GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-Initialize.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-windres.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/4.3.3/CMakeCCompiler.cmake CMakeFiles/4.3.3/CMakeCXXCompiler.cmake CMakeFiles/4.3.3/CMakeRCCompiler.cmake CMakeFiles/4.3.3/CMakeSystem.cmake: phony
 
 
 #############################################

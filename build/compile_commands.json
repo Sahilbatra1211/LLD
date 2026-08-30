@@ -1,8 +1,8 @@
 [
 {
   "directory": "C:/Users/sahil/OneDrive/Documents/LLD/build",
-  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -g -std=gnu++20 -o \"Design Pattern\\Singleton Pattern\\CMakeFiles\\SingletonPattern.dir\\main.cpp.obj\" -c \"C:\\Users\\sahil\\OneDrive\\Documents\\LLD\\Design Pattern\\Singleton Pattern\\main.cpp\"",
-  "file": "C:/Users/sahil/OneDrive/Documents/LLD/Design Pattern/Singleton Pattern/main.cpp",
-  "output": "C:/Users/sahil/OneDrive/Documents/LLD/build/Design Pattern/Singleton Pattern/CMakeFiles/SingletonPattern.dir/main.cpp.obj"
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -g -std=gnu++20 -o \"Questions\\Tic Tac Toe\\CMakeFiles\\TicTacToe.dir\\main.cpp.obj\" -c \"C:\\Users\\sahil\\OneDrive\\Documents\\LLD\\Questions\\Tic Tac Toe\\main.cpp\"",
+  "file": "C:/Users/sahil/OneDrive/Documents/LLD/Questions/Tic Tac Toe/main.cpp",
+  "output": "C:/Users/sahil/OneDrive/Documents/LLD/build/Questions/Tic Tac Toe/CMakeFiles/TicTacToe.dir/main.cpp.obj"
 }
 ]
