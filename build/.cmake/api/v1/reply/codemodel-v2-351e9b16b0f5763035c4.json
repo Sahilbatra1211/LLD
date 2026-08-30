@@ -20,15 +20,15 @@
 					"source" : "."
 				},
 				{
-					"build" : "Questions/Tic Tac Toe",
-					"jsonFile" : "directory-Questions.Tic Tac Toe-Debug-3012197a30856b55f516.json",
+					"build" : "Multi-Threading",
+					"jsonFile" : "directory-Multi-Threading-Debug-48a2e2369f6f1acb2163.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.20"
 					},
 					"parentIndex" : 0,
 					"projectIndex" : 1,
-					"source" : "Questions/Tic Tac Toe",
+					"source" : "Multi-Threading",
 					"targetIndexes" : 
 					[
 						0
@@ -54,7 +54,7 @@
 					[
 						1
 					],
-					"name" : "TicTacToe",
+					"name" : "MultiThreading",
 					"parentIndex" : 0,
 					"targetIndexes" : 
 					[
@@ -66,9 +66,9 @@
 			[
 				{
 					"directoryIndex" : 1,
-					"id" : "TicTacToe::@06028e5fe97d0a15291b",
-					"jsonFile" : "target-TicTacToe-Debug-c884e947632fbf5c3702.json",
-					"name" : "TicTacToe",
+					"id" : "MultiThreading::@de1ba20c29e8b9167769",
+					"jsonFile" : "target-MultiThreading-Debug-cf6cd66673f6a0cbefb2.json",
+					"name" : "MultiThreading",
 					"projectIndex" : 1
 				}
 			]

@@ -275,6 +275,15 @@ LLD_IS_TOP_LEVEL:STATIC=ON
 LLD_SOURCE_DIR:STATIC=C:/Users/sahil/OneDrive/Documents/LLD
 
 //Value Computed by CMake
+MultiThreading_BINARY_DIR:STATIC=C:/Users/sahil/OneDrive/Documents/LLD/build/Multi-Threading
+
+//Value Computed by CMake
+MultiThreading_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+MultiThreading_SOURCE_DIR:STATIC=C:/Users/sahil/OneDrive/Documents/LLD/Multi-Threading
+
+//Value Computed by CMake
 ObserverPattern_BINARY_DIR:STATIC=C:/Users/sahil/OneDrive/Documents/LLD/build/Design Pattern/Observer Design Pattern
 
 //Value Computed by CMake
