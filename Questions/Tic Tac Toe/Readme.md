@@ -1099,6 +1099,90 @@ The key trigger is:
 
 > One event → many interested objects need to be notified.
 
+`Game` **HAS-A** `EventPublisher`. It does not hold UI/logger itself. After a valid move it calls `publisher->publish(event)`. The publisher loops over subscribers and calls `update`.
+
+Wire subscribers in `main`:
+
+```cpp
+publisher->subscribe(ui);
+publisher->subscribe(logger);
+```
+
+### Class diagram (Observer — Game HAS-A Publisher)
+
+```mermaid
+classDiagram
+    class Game {
+        -Board* board
+        -Player* player1
+        -Player* player2
+        -EventPublisher* publisher
+        +start() void
+        +save() void
+    }
+
+    class EventPublisher {
+        -vector~Observer*~ subscribers
+        +subscribe(Observer* observer)
+        +unsubscribe(Observer* observer)
+        +publish(const MoveEvent& event)
+    }
+
+    class Observer {
+        <<interface>>
+        +update(const MoveEvent& event)
+    }
+
+    class MoveEvent {
+        <<DTO>>
+        +int row
+        +int col
+        +Symbol symbol
+        +string playerName
+    }
+
+    class UI {
+        +update(const MoveEvent& event)
+    }
+
+    class Logger {
+        +update(const MoveEvent& event)
+    }
+
+    class Spectator {
+        +update(const MoveEvent& event)
+    }
+
+    Game --> EventPublisher : HAS-A
+    Game ..> MoveEvent : creates after a move
+    EventPublisher o--> Observer : HAS-A subscribers
+    EventPublisher ..> MoveEvent : publish
+    UI --|> Observer : IS-A
+    Logger --|> Observer : IS-A
+    Spectator --|> Observer : IS-A
+```
+
+| Piece | Role |
+|---|---|
+| `Game` | After `makeAMove` succeeds, `publisher->publish(event)`. Does not call UI or logger by name. |
+| `EventPublisher` | Holds `vector<Observer*>`. `publish` notifies everyone. |
+| `Observer` | Contract: `update(MoveEvent)`. |
+| `UI` / `Logger` / `Spectator` | Subscribers. Each decides what to do with the event. |
+| `MoveEvent` | DTO payload (row, col, symbol, player name). |
+
+```text
+main
+ ├── subscribe(UI)
+ └── subscribe(Logger)
+
+Game
+ └── HAS-A EventPublisher
+           ↓ publish(MoveEvent)
+     ┌─────┼─────┐
+     ↓     ↓     ↓
+    UI  Logger  Spectator
+```
+
 ---
 
 ## 19. Requirement: Different UIs
