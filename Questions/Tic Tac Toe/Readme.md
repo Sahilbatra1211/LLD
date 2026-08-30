@@ -939,6 +939,128 @@ Tomorrow: Database.
 
 `Game` doesn't need to know the storage implementation.
 
+### Who calls save / resume?
+
+**Yes — `Game` is the one that talks to persistence.** `Board` and `Player` do not talk to the DB.
+
+**Save (close the game)**
+
+```text
+Game.save()
+    ↓
+copy live data into GameState   (snapshot)
+    ↓
+repository.save(gameState)
+    ↓
+File or Database
+```
+
+`Game` **builds** the snapshot. The **repository** writes bytes. `Game` never knows JSON vs SQL.
+
+**Resume (start that saved game)**
+
+```text
+main / Game.restore()
+    ↓
+repository.load()  →  GameState
+    ↓
+Game copies snapshot back into live objects
+    ↓
+new Board(cells), Players, whose turn, which rule
+    ↓
+game.start() continues
+```
+
+You do **not** create `BoardState`, `PlayerState`, `SymbolState` as a parallel class tree. `GameState` already **contains** the board cells and player info. Load **reconstructs** the real `Board` / `Player` objects from that one snapshot.
+
+### Class diagram (save and resume)
+
+```mermaid
+classDiagram
+    class Game {
+        -Board* board
+        -Player* player1
+        -Player* player2
+        -Player* currTurn
+        -WinningStrategy* winningStrategy
+        -IGameRepository* repository
+        +start() void
+        +save() void
+        +restore() void
+    }
+
+    class Board {
+        +makeAMove(int, int, Symbol) bool
+        +validate(int, int) bool
+        +getCells() vector~vector~Symbol~~
+    }
+
+    class Player {
+        -string playerName
+        -Symbol symbol
+        -PlayerStrategy* playerStrategy
+    }
+
+    class GameState {
+        <<snapshot / DTO>>
+        +int rows
+        +int cols
+        +vector~vector~Symbol~~ cells
+        +vector~PlayerInfo~ players
+        +int currentPlayerIndex
+        +string ruleId
+    }
+
+    class PlayerInfo {
+        <<DTO>>
+        +string name
+        +Symbol symbol
+        +string strategyId
+    }
+
+    class IGameRepository {
+        <<interface>>
+        +save(const GameState& state)
+        +load() GameState
+    }
+
+    class FileGameRepository {
+        +save(const GameState& state)
+        +load() GameState
+    }
+
+    class DbGameRepository {
+        +save(const GameState& state)
+        +load() GameState
+    }
+
+    Game --> Board : HAS-A
+    Game --> Player : HAS-A
+    Game --> WinningStrategy : HAS-A
+    Game --> IGameRepository : HAS-A
+    Game ..> GameState : creates on save / reads on restore
+    GameState *-- PlayerInfo
+    FileGameRepository --|> IGameRepository : IS-A
+    DbGameRepository --|> IGameRepository : IS-A
+    IGameRepository ..> GameState : save / load
+```
+
+| Piece | Role |
+|---|---|
+| `Game` | Orchestrator. Builds snapshot on save. Rebuilds `Board` / `Player`s on restore. Calls repository. |
+| `GameState` | Plain data copy. Not a live game. Safe to put in a file or DB. |
+| `PlayerInfo` | Nested fields inside the snapshot (name, symbol, strategy kind) — not a second `Player` class tree. |
+| `IGameRepository` | Abstraction. `Game` depends on this, not on files or SQL. |
+| `FileGameRepository` / `DbGameRepository` | How the snapshot is stored. Swap without changing `Game`. |
+
+```text
+SAVE
+Game (live)  →  GameState  →  IGameRepository  →  disk / DB
+
+RESUME
+disk / DB  →  IGameRepository  →  GameState  →  Game (live Board + Players)
+```
+
 ---
 
 ## 18. Requirement: Observer / Notifications
