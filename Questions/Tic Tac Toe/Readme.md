@@ -1299,6 +1299,100 @@ Ask:
 
 This is where your concurrency knowledge becomes relevant.
 
+Think in terms of an **API**, not one console `game.start()`.
+
+The client cannot keep a C++ `Game*`. Each HTTP request is new. The client sends a **`gameId`**. The manager looks up the live object and then you apply the move.
+
+```text
+POST /games              →  manager.createGame(...)  →  return gameId
+POST /games/42/move      →  Game* g = manager.get(42)
+                         →  g->makeMove(row, col)
+```
+
+`GameManager` **stores** the objects. The **id** is how the next request finds the same match.
+
+```text
+GameManager
+ └── unordered_map<gameId, Game*>
+
+createGame()  →  new Game, put in map, return id
+get(id)       →  return Game*   (then decide: move / win / save)
+```
+
+`main` (or the API layer) owns the manager, **adds** games, and **does not** run a single `start()` for 100k matches.
+
+### Class diagram (many games + id lookup)
+
+```mermaid
+classDiagram
+    class GameManager {
+        -unordered_map~int, Game*~ games
+        -mutex mapMutex
+        +createGame(...) int
+        +get(int gameId) Game*
+        +makeMove(int gameId, int row, int col)
+    }
+
+    class Game {
+        -Board* board
+        -mutex gameMutex
+        +makeMove(int row, int col)
+    }
+
+    GameManager o--> Game : HAS-A map of games
+```
+
+### Where concurrency comes in
+
+Isolation is **not** the same as concurrency.
+
+**Independent games** (no shared `static` board): Game 1 and Game 2 can run at the same time. You do **not** lock all 100k games for that.
+
+Concurrency matters when **two threads / two API requests** can touch the **same** data at once.
+
+| Situation | Need a lock? |
+|---|---|
+| Request A → game 42, Request B → game 99 | **No** shared game state. Can proceed in parallel. |
+| Two requests both → **game 42** (two moves at once) | **Yes.** Lock **that** `Game` (or `gameId`) so two `makeMove`s don’t corrupt the board. |
+| `createGame` / `get` on the **map** | **Yes, briefly.** Two threads inserting into `unordered_map` at once is unsafe. Lock the **map**, not every game. |
+
+```text
+Thread 1: move on game 42          Thread 2: move on game 42
+        \                              /
+         lock Game 42  →  makeMove  →  unlock
+```
+
+```text
+Thread 1: move on 42     Thread 2: move on 99
+        \                      /
+         no common Game lock — only each game's own lock
+```
+
+**Where locks live**
+
+- `GameManager` map: short lock for add/lookup/remove  
+- `Game`: lock around `makeMove` (board + turn) if that game can get concurrent requests  
+
+Do **not** put `static` board / `static` current player — then all 100k games share one board and you have a real race (and a wrong design).
+
+### Interview line
+
+> Manager is `map<id, Game*>`. API uses id, manager returns the `Game*`, then we apply the move. Games are isolated. Concurrency: lock the map for lookup; lock **per game** if two requests can hit the same match. Different games don’t share a lock.
+
+### Lookup vs concurrency (remember this)
+
+`get(42)` → `Game*` → `makeMove` is only **finding** the object.
+
+That is **not** concurrency yet.
+
+Concurrency starts when **two threads use that object (or the map) at the same time**:
+
+- **Game 42 and Game 99 at once** — independent. No one big lock. Each game can have its own lock (or none if only one thread uses that game).
+- **Two requests both on game 42** — both get the **same** `Game*`. Without a lock, two `makeMove`s can interleave and corrupt the board. **That** is the race.
+- **Two `createGame`s at once** — both write the **map**. Short lock on the manager for insert/lookup.
+
+**One line:** id + pointer is the API story. Concurrency is **shared map** and **the same `Game` hit twice** — not “we have many games.”
+
 ---
 
 ## 23. Requirement: Tournament Mode
