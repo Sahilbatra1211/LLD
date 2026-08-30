@@ -566,6 +566,107 @@ bool isWin(const Board& board, const Player& player);
 
 The strategy determines whether the current state is a winning state.
 
+`Game` owns the `WinningStrategy`. After a move it does **not** call `board->isWin()`. It asks the strategy:
+
+```cpp
+winningStrategy->isWin(*board, currTurn->getSymbol());
+```
+
+`Board` only stores cells and applies moves. Win rules live in the strategy.
+
+### Class diagram (after this requirement)
+
+```mermaid
+classDiagram
+    class Symbol {
+        <<enumeration>>
+        EMPTY
+        X
+        O
+    }
+
+    class Game {
+        -Player* player1
+        -Player* player2
+        -Board* board
+        -Player* currTurn
+        -WinningStrategy* winningStrategy
+        +Game(Board*, Player*, Player*, WinningStrategy*)
+        +start() void
+        +switchTurn() void
+    }
+
+    class Board {
+        -vector~vector~Symbol~~ board
+        -int n
+        -int m
+        +Board(int n, int m)
+        +makeAMove(int x, int y, Symbol s) bool
+        +validate(int x, int y) bool
+        +isDraw() bool
+        +displayBoard() void
+    }
+
+    class Player {
+        -string playerName
+        -Symbol symbol
+        -PlayerStrategy* playerStrategy
+        +getCoordinates() pair~int,int~
+        +getName() string
+        +getSymbol() Symbol
+    }
+
+    class PlayerStrategy {
+        <<interface>>
+        +giveCoordinates() pair~int,int~
+    }
+
+    class HumanPlayerStrategy {
+        +giveCoordinates() pair~int,int~
+    }
+
+    class WinningStrategy {
+        <<interface>>
+        +isWin(const Board& board, Symbol symbol) bool
+    }
+
+    class NormalWinningStrategy {
+        +isWin(const Board& board, Symbol symbol) bool
+    }
+
+    class FourInARowStrategy {
+        +isWin(const Board& board, Symbol symbol) bool
+    }
+
+    Game --> Board : HAS-A
+    Game --> Player : HAS-A
+    Game --> WinningStrategy : HAS-A
+    Player --> Symbol : uses
+    Player --> PlayerStrategy : HAS-A
+    Board --> Symbol : uses
+    WinningStrategy ..> Board : uses (read-only)
+    WinningStrategy ..> Symbol : uses
+    HumanPlayerStrategy --|> PlayerStrategy : IS-A
+    NormalWinningStrategy --|> WinningStrategy : IS-A
+    FourInARowStrategy --|> WinningStrategy : IS-A
+```
+
+| Relationship | Meaning |
+|---|---|
+| `Game` HAS-A `WinningStrategy` | Injected like `PlayerStrategy` — classic vs 4-in-a-row |
+| `WinningStrategy` uses `Board` | Reads cells; does not call `makeAMove` |
+| `isWin(board, symbol)` | "Did this symbol complete a winning line?" |
+| `Board` has **no** `isWin()` | State only; rules moved out |
+
+```text
+Game
+ ├── Board              (state + makeAMove)
+ ├── Players
+ └── WinningStrategy    (Normal or FourInARow)
+         ↓
+    isWin(board, symbol)
+```
+
 ---
 
 ## 12. Board vs Winning Strategy
