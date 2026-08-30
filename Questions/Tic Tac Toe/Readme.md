@@ -1,5 +1,96 @@
 # Tic-Tac-Toe LLD — Complete Notes
 
+## Current Code — Class Diagram
+
+This is the design of **what the code has now**, not the full interview evolution.
+
+```mermaid
+classDiagram
+    class Symbol {
+        <<enumeration>>
+        EMPTY
+        X
+        O
+    }
+
+    class Game {
+        -Player* player1
+        -Player* player2
+        -Board* board
+        -Player* currTurn
+        +Game(Board*, Player*, Player*)
+        +start() void
+        +switchTurn() void
+    }
+
+    class Board {
+        -vector~vector~Symbol~~ board
+        -int n
+        -int m
+        +Board(int n, int m)
+        +makeAMove(int x, int y, Symbol s) bool
+        +validate(int x, int y) bool
+        +isWin() bool
+        +isDraw() bool
+        +displayBoard() void
+    }
+
+    class Player {
+        -string playerName
+        -Symbol symbol
+        -PlayerStrategy* playerStrategy
+        +Player(string, Symbol, PlayerStrategy*)
+        +getCoordinates() pair~int,int~
+        +getName() string
+        +getSymbol() Symbol
+    }
+
+    class PlayerStrategy {
+        <<interface>>
+        +giveCoordinates() pair~int,int~
+    }
+
+    class HumanPlayerStrategy {
+        +giveCoordinates() pair~int,int~
+    }
+
+    Game --> Board : HAS-A
+    Game --> Player : HAS-A (player1, player2, currTurn)
+    Player --> Symbol : uses
+    Player --> PlayerStrategy : HAS-A
+    Board --> Symbol : uses
+    HumanPlayerStrategy --|> PlayerStrategy : IS-A
+```
+
+### How to read it
+
+| Relationship | Meaning in the code |
+|---|---|
+| `Game` HAS-A `Board` | Game tells the board to move / check win |
+| `Game` HAS-A two `Player`s | Plus `currTurn` pointing at one of them |
+| `Player` HAS-A `PlayerStrategy` | `getCoordinates()` delegates to strategy |
+| `HumanPlayerStrategy` IS-A `PlayerStrategy` | Only concrete strategy so far |
+| `Board` / `Player` use `Symbol` | Cells and player marks |
+
+### Runtime (from `main`)
+
+```text
+main
+ ├── HumanPlayerStrategy   (one object, shared by both players today)
+ ├── Player Sahil (O)
+ ├── Player Vishal (X)
+ ├── Board 3×3
+ └── Game
+        ├── board
+        ├── player1 → Sahil
+        ├── player2 → Vishal
+        └── currTurn → Sahil
+```
+
+There is no `WinningStrategy`, `Move`, `GameState`, or Observer in this diagram — those exist later in these notes, not in the current code.
+
+---
+
 ## 1. How to Think About LLD
 
 The biggest mistake in LLD is starting with:
