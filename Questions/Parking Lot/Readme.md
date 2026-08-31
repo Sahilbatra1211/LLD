@@ -206,7 +206,7 @@ Do **not** extract a service on day one.
 | They say | You add |
 |---|---|
 | Different rates for car vs bike | Payment strategy takes `VehicleType` (or hours × rate table) |
-| Multiple entries / exits | `Gate` objects; lot still orchestrates |
+| Multiple entries / exits | See **Follow-up 1** below |
 | Nearest to elevator | Richer slot strategy (slot has distance) |
 | Display free slots | Query on floors; or Observer if many UIs |
 | Save lot state | `ParkingLotState` DTO + repository — not a State class per model |
@@ -214,6 +214,131 @@ Do **not** extract a service on day one.
 ### Interview line
 
 > `ParkingLot` owns floors, tickets, and injected strategies. Entry finds a type-matching slot, occupies it, issues a ticket. Exit finds ticket by plate, prices from real times, frees the slot. Slot allocation and pricing vary independently via Strategy.
+
+---
+
+## Follow-up 1: Multiple entry gates (and two cars at once)
+
+**Do not add this until the interviewer asks.** Extremely likely follow-up.
+
+### Multiple gates
+
+You already think of several gates:
+
+```text
+EntryGate   EntryGate   EntryGate
+        \       |       /
+         ParkingLot (shared floors + slots)
+```
+
+Gates do **not** each own a copy of the slots. They all call the same `ParkingLot` (or a shared allocator).
+
+```text
+car at Gate A          car at Gate B
+        \                    /
+         ParkingLot.entry()
+```
+
+### The real question
+
+> If two cars enter simultaneously, how do you prevent both from getting the same spot?
+
+Today:
+
+```text
+check availability
+      ↓
+occupy
+```
+
+That is **not atomic**.
+
+```text
+Thread A                Thread B
+find spot #10           find spot #10
+      ↓                       ↓
+occupy #10               occupy #10
+```
+
+Both thought #10 was free.
+
+### What to say
+
+> Allocation and occupation of a spot must be synchronized so that **checking and reserving happen atomically**.
+
+A single mutex on the whole `ParkingLot` works and is a valid first answer. Better: **granular locking on the slot**, so two cars on **different** spots do not wait on each other.
+
+### Granular lock (best interview answer)
+
+Lock **that** `ParkingSlot` on occupy and on release. Keep the critical section small.
+
+**Important:** locking only *after* `findSlot` already returned #10 is **not** enough. Thread B may still have chosen #10 before A occupied it.
+
+Check + reserve must be **inside** the slot lock:
+
+```text
+tryOccupy(slot):
+    lock(slot)
+    if slot is free AND type matches:
+        occupied = true
+        success
+    unlock(slot)
+```
+
+Release:
+
+```text
+release(slot):
+    lock(slot)
+    occupied = false
+    unlock(slot)
+```
+
+`findSlot` / `entry` then **tries** spots in nearest order until `tryOccupy` succeeds. If #10 is taken between scan and lock, the lock sees occupied and you try #11.
+
+```text
+Thread A                         Thread B
+tryOccupy(#10)                   tryOccupy(#10)
+lock #10                         wait
+occupy, unlock                   lock #10
+                                 already occupied → try #11
+```
+
+| Approach | When to mention |
+|---|---|
+| One mutex on `ParkingLot.entry()` | Simple, correct, serializes all entries |
+| Mutex per `ParkingSlot` + `tryOccupy` | Better: critical section is one slot; other gates can park elsewhere in parallel |
+
+Do **not** lock the entire lot for the whole ticket + payment flow — only for the occupy/release of that spot.
+
+### Class diagram (after this follow-up)
+
+```mermaid
+classDiagram
+    class ParkingLot {
+        +entry(Vehicle*) Ticket*
+        +exit(Vehicle*) int
+    }
+
+    class EntryGate {
+        -ParkingLot* lot
+        +enter(Vehicle*) Ticket*
+    }
+
+    class ParkingSlot {
+        -bool occupied
+        -mutex slotMutex
+        +tryOccupy(VehicleType) bool
+        +release() void
+    }
+
+    EntryGate --> ParkingLot : HAS-A / calls
+    ParkingLot --> ParkingSlot : HAS-A (via floors)
+```
+
+### Interview line
+
+> Multiple gates share one `ParkingLot`. I won’t add threads until asked. When asked: check and occupy must be atomic. I lock per slot in `tryOccupy` / `release` so the critical section is small. If two threads pick the same spot, the second lock sees it occupied and tries the next one. I do not hold a lot-wide lock for payment.
 
 ---
 
