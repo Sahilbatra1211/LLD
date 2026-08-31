@@ -216,7 +216,7 @@
 			"path" : "C:/msys64/ucrt64/share/cmake/Modules/Platform/Linker/Windows-GNU.cmake"
 		},
 		{
-			"path" : "Multi-Threading/CMakeLists.txt"
+			"path" : "Questions/Parking Lot/CMakeLists.txt"
 		}
 	],
 	"kind" : "cmakeFiles",

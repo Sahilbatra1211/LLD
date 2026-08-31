@@ -1,8 +1,8 @@
 [
 {
   "directory": "C:/Users/sahil/OneDrive/Documents/LLD/build",
-  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -g -std=gnu++20 -o Multi-Threading\\CMakeFiles\\MultiThreading.dir\\ConditionVariable.cpp.obj -c C:\\Users\\sahil\\OneDrive\\Documents\\LLD\\Multi-Threading\\ConditionVariable.cpp",
-  "file": "C:/Users/sahil/OneDrive/Documents/LLD/Multi-Threading/ConditionVariable.cpp",
-  "output": "C:/Users/sahil/OneDrive/Documents/LLD/build/Multi-Threading/CMakeFiles/MultiThreading.dir/ConditionVariable.cpp.obj"
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -g -std=gnu++20 -o \"Questions\\Parking Lot\\CMakeFiles\\ParkingLot.dir\\main.cpp.obj\" -c \"C:\\Users\\sahil\\OneDrive\\Documents\\LLD\\Questions\\Parking Lot\\main.cpp\"",
+  "file": "C:/Users/sahil/OneDrive/Documents/LLD/Questions/Parking Lot/main.cpp",
+  "output": "C:/Users/sahil/OneDrive/Documents/LLD/build/Questions/Parking Lot/CMakeFiles/ParkingLot.dir/main.cpp.obj"
 }
 ]

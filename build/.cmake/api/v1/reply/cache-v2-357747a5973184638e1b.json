@@ -1490,6 +1490,42 @@
 			"value" : "C:/Users/sahil/OneDrive/Documents/LLD/Design Pattern/Observer Design Pattern"
 		},
 		{
+			"name" : "ParkingLot_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "C:/Users/sahil/OneDrive/Documents/LLD/build/Questions/Parking Lot"
+		},
+		{
+			"name" : "ParkingLot_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "OFF"
+		},
+		{
+			"name" : "ParkingLot_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "C:/Users/sahil/OneDrive/Documents/LLD/Questions/Parking Lot"
+		},
+		{
 			"name" : "SingletonPattern_BINARY_DIR",
 			"properties" : 
 			[

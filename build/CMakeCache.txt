@@ -293,6 +293,15 @@ ObserverPattern_IS_TOP_LEVEL:STATIC=OFF
 ObserverPattern_SOURCE_DIR:STATIC=C:/Users/sahil/OneDrive/Documents/LLD/Design Pattern/Observer Design Pattern
 
 //Value Computed by CMake
+ParkingLot_BINARY_DIR:STATIC=C:/Users/sahil/OneDrive/Documents/LLD/build/Questions/Parking Lot
+
+//Value Computed by CMake
+ParkingLot_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+ParkingLot_SOURCE_DIR:STATIC=C:/Users/sahil/OneDrive/Documents/LLD/Questions/Parking Lot
+
+//Value Computed by CMake
 SingletonPattern_BINARY_DIR:STATIC=C:/Users/sahil/OneDrive/Documents/LLD/build/Design Pattern/Singleton Pattern
 
 //Value Computed by CMake
