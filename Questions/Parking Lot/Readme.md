@@ -208,8 +208,8 @@ Do **not** extract a service on day one.
 | Different rates for car vs bike | Payment strategy takes `VehicleType` (or hours × rate table) |
 | Multiple entries / exits | See **Follow-up 1** below |
 | Cars in larger spots / truck needs two car spots | See **Follow-up 2** below |
-| Display free slots | Query on floors; or Observer if many UIs |
-| Save lot state | `ParkingLotState` DTO + repository — not a State class per model |
+| Electric vehicles / charging spots | See **Follow-up 3** below |
+| Ticketing / payment becomes complex | See **Follow-up 4** below |
 
 ### Interview line
 
@@ -488,6 +488,316 @@ classDiagram
 ### Interview line
 
 > Equality of types isn’t enough — I ask if the vehicle **fits**. I’ll give slots remaining capacity and vehicles a size. `tryOccupy` / `release` add and subtract size under the slot lock. I don’t need a separate release strategy: the **ticket** stores slot and capacity used, exit just reverses occupy. If a truck needs two car spots, the ticket holds both slots.
+
+---
+
+## Follow-up 3: Electric vehicles (charging)
+
+**Do not add this until the interviewer asks.**
+
+### Don’t do this
+
+```text
+Vehicle.isElectric
+ParkingSpot.isElectric     ❌ same name, different meaning
+```
+
+```text
+ElectricCar : Car
+ElectricCarParkingSpot : CarParkingSpot     ❌ inheritance just for one flag
+```
+
+```text
+ElectricVehicleStrategy     ❌ new strategy only because EVs appeared
+```
+
+### Do this: two different questions
+
+| Object | Property | Meaning |
+|---|---|---|
+| `Vehicle` | `isElectric` | Am I electric? |
+| `ParkingSpot` | `supportsCharging` | Can I provide charging? |
+
+```text
+Vehicle
+├── VehicleType type
+└── bool isElectric
+
+ParkingSpot
+├── VehicleType supportedType
+└── bool supportsCharging
+```
+
+Example:
+
+```text
+Vehicle:  type = CAR, isElectric = true
+
+Spot 1:   type = CAR, supportsCharging = false
+Spot 2:   type = CAR, supportsCharging = true
+```
+
+```text
+findSpot(vehicle)
+       ↓
+vehicle.isElectric?
+       ↓
+yes → need supportsCharging == true
+no  → any compatible type / capacity is fine
+```
+
+### Keep it inside the existing allocation strategy
+
+The operation is still `findSpot(vehicle)`. EV is an **extra constraint**, not a new algorithm.
+
+```text
+SlotAvailableStrategy
+    ↓
+findSpot(vehicle)
+    ↓
+check:
+  vehicle type compatible?
+  remaining capacity enough?
+  if vehicle.electric → spot.supportsCharging?
+  tryOccupy atomically
+```
+
+A **separate** strategy is interesting when the **whole algorithm** changes (nearest vs farthest vs capacity-sharing), not when one more if-condition appears.
+
+### Mental model: requirements vs capabilities
+
+```text
+Vehicle requirements
+        ↓
+ ┌──────────────────┐
+ │ VehicleType       │
+ │ Electric?         │
+ │ Size              │
+ │ Other capabilities│
+ └──────────────────┘
+        ↓
+ParkingSpot capabilities
+        ↓
+ ┌──────────────────┐
+ │ SpotType          │
+ │ Charging          │
+ │ Capacity          │
+ │ Other capabilities│
+ └──────────────────┘
+        ↓
+Allocation decision: does this spot satisfy this vehicle?
+```
+
+New requirement is often **new property + new constraint**, not **new subclass**.
+
+### Class diagram (after this follow-up)
+
+```mermaid
+classDiagram
+    class Vehicle {
+        -VehicleType type
+        -bool isElectric
+        -int size
+    }
+
+    class ParkingSlot {
+        -VehicleType supportedType
+        -bool supportsCharging
+        -int maxCapacity
+        -int usedCapacity
+        +tryOccupy(Vehicle) bool
+    }
+
+    class SlotAvailableStrategy {
+        <<interface>>
+        +findAndOccupy(floors, Vehicle) ParkingSlot*
+    }
+
+    Vehicle --> "requirements" type_electric_size
+    ParkingSlot --> "capabilities" type_charging_capacity
+    SlotAvailableStrategy ..> Vehicle : reads requirements
+    SlotAvailableStrategy ..> ParkingSlot : matches capabilities
+```
+
+### Interview line
+
+> I won’t add `ElectricCar` or `ElectricSpot` subclasses, and I won’t add `ElectricVehicleStrategy`. Vehicle has `isElectric`, spot has `supportsCharging`. Allocation still `findSpot(vehicle)` with one extra constraint: if electric, the spot must charge. That’s a property + constraint, not a new hierarchy.
+
+---
+
+## Follow-up 4: Ticketing / payment becomes complex
+
+**Do not extract these managers just because you have a `Ticket` class.** Extract when that area is **large or evolving on its own** (history, retries, refunds, invoices).
+
+### Initially — `ParkingLot` is still the orchestrator
+
+```text
+ParkingLot
+├── floors
+├── tickets
+├── SlotAllocationStrategy
+├── PricingStrategy
+├── entry()
+└── exit()
+```
+
+That matches the current code. Fine for v1.
+
+### When to extract
+
+If **ticket/session** management gets heavy:
+
+```text
+ParkingLot
+      ↓
+TicketingService / TicketManager
+      ├── createTicket()
+      ├── findActiveTicket()
+      ├── completeTicket()
+      └── ticket / history storage
+```
+
+If **payment** gets heavy:
+
+```text
+ParkingLot
+      ↓
+PaymentService / PaymentManager
+      ├── processPayment()
+      ├── payment status
+      ├── retries
+      ├── refunds
+      └── receipts / history
+```
+
+### How the flow changes
+
+**Before**
+
+```text
+ParkingLot.entry(vehicle)
+    ↓
+find slot
+    ↓
+create ticket
+    ↓
+store ticket
+
+ParkingLot.exit(vehicle)
+    ↓
+find ticket
+    ↓
+calculate fee
+    ↓
+process payment
+    ↓
+release spot
+```
+
+**After**
+
+```text
+ParkingLot.entry(vehicle)
+    ↓
+SlotAllocationStrategy → find / occupy spot
+    ↓
+TicketingService → create / store ticket
+
+ParkingLot.exit(vehicle)
+    ↓
+TicketingService → find active ticket
+    ↓
+PaymentService → calculate / process payment
+    ↓
+release spot
+    ↓
+TicketingService → complete ticket
+```
+
+`ParkingLot` still **orchestrates**. It no longer **owns** the ticket list or payment retries.
+
+### Strategy vs Service — they coexist
+
+```text
+PaymentService
+      ↓
+PricingStrategy
+      ↓
+calculate fee
+```
+
+| | Role |
+|---|---|
+| **Strategy** | Varying **algorithm** (hourly vs flat, nearest vs farthest) |
+| **Service / Manager** | Owns a **business area** (all tickets, all payments) |
+
+You do **not** replace `PricingStrategy` with `PaymentService`. The service **uses** the strategy.
+
+### Class diagram (after TicketManager + PaymentService)
+
+Compared to the current diagram: tickets move **off** `ParkingLot` onto `TicketingService`. Payment is no longer a single `calculate()` call on the lot — the lot talks to `PaymentService`, which still HAS-A `PricingStrategy`.
+
+```mermaid
+classDiagram
+    class ParkingLot {
+        -vector~Floor*~ floors
+        -SlotAvailableStrategy* slotStrategy
+        -TicketingService* ticketing
+        -PaymentService* payment
+        +entry(Vehicle*) Ticket*
+        +exit(Vehicle*) int
+    }
+
+    class TicketingService {
+        -vector~Ticket*~ tickets
+        +createTicket(Vehicle*, ParkingSlot*, int) Ticket*
+        +findActiveTicket(Vehicle*) Ticket*
+        +completeTicket(Ticket*)
+    }
+
+    class PaymentService {
+        -PricingStrategy* pricingStrategy
+        +processPayment(Ticket*, int endTime) int
+        +refund(Ticket*)
+    }
+
+    class PricingStrategy {
+        <<interface>>
+        +calculate(int startTime, int endTime) int
+    }
+
+    class SlotAvailableStrategy {
+        <<interface>>
+        +findAndOccupy(floors, Vehicle) ParkingSlot*
+    }
+
+    class Ticket
+    class Floor
+    class ParkingSlot
+
+    ParkingLot --> Floor : HAS-A
+    ParkingLot --> SlotAvailableStrategy : HAS-A
+    ParkingLot --> TicketingService : HAS-A
+    ParkingLot --> PaymentService : HAS-A
+    TicketingService --> Ticket : HAS-A / stores
+    Ticket --> ParkingSlot
+    Ticket --> Vehicle
+    PaymentService --> PricingStrategy : HAS-A
+    Floor --> ParkingSlot : HAS-A
+```
+
+What **moved** from current `ParkingLot`:
+
+| Before (current code) | After extraction |
+|---|---|
+| `vector<Ticket*> tickets` on `ParkingLot` | on `TicketingService` |
+| `generateEntryTicket` / `findTicket` | `createTicket` / `findActiveTicket` |
+| `PaymentStrategy* paymentStrategy` used in `exit` | `PaymentService` wraps pricing + pay/refund/retry |
+| `entry` / `exit` still on `ParkingLot` | still there — thinner, they **delegate** |
+
+### Interview line
+
+> I’ll keep tickets and `calculate` on `ParkingLot` until that area grows. If history, refunds, or retries appear, I’ll extract `TicketingService` and `PaymentService`. The lot still calls them on entry/exit. `PricingStrategy` stays under payment — strategy is the fee algorithm, the service owns the payment workflow.
 
 ---
 
