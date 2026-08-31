@@ -207,7 +207,7 @@ Do **not** extract a service on day one.
 |---|---|
 | Different rates for car vs bike | Payment strategy takes `VehicleType` (or hours × rate table) |
 | Multiple entries / exits | See **Follow-up 1** below |
-| Nearest to elevator | Richer slot strategy (slot has distance) |
+| Cars in larger spots / truck needs two car spots | See **Follow-up 2** below |
 | Display free slots | Query on floors; or Observer if many UIs |
 | Save lot state | `ParkingLotState` DTO + repository — not a State class per model |
 
@@ -339,6 +339,155 @@ classDiagram
 ### Interview line
 
 > Multiple gates share one `ParkingLot`. I won’t add threads until asked. When asked: check and occupy must be atomic. I lock per slot in `tryOccupy` / `release` so the critical section is small. If two threads pick the same spot, the second lock sees it occupied and tries the next one. I do not hold a lot-wide lock for payment.
+
+---
+
+## Follow-up 2: Cars can park in larger spots (capacity)
+
+**Do not add this until the interviewer asks.**
+
+### What exactly changed?
+
+Not a new `Game`-style class. The **allocation rule** changed.
+
+```text
+Before:  spot.type == vehicle.type   AND   !occupied
+After:   can this vehicle fit here?
+```
+
+`occupied` as a boolean is no longer enough.
+
+### Two slightly different interviewer versions
+
+| They say | Meaning |
+|---|---|
+| Car can use a truck bay; two cars can share one truck bay | **One slot** has leftover **capacity** |
+| Truck can use a truck spot **or two car spots** | **One vehicle** may need **several slots** |
+
+Same idea: “fit,” not equality. Your capacity idea covers the first. The second needs the ticket to remember **which slots** were taken.
+
+Don’t jump to a big inheritance tree. Ask: *is the rule “remaining space on this bay” or “claim N adjacent bays”?*
+
+### Capacity model (your idea — good)
+
+Give each vehicle a **size** and each slot a **max capacity**:
+
+```text
+two-wheeler  →  2
+car          →  4
+truck        →  8
+```
+
+```text
+ParkingSlot
+├── maxCapacity     (truck bay = 8, car bay = 4, bike = 2)
+└── usedCapacity    (starts at 0)
+```
+
+A slot is **full** when `usedCapacity == maxCapacity`. A vehicle **fits** when:
+
+```text
+usedCapacity + vehicle.size  <=  maxCapacity
+```
+
+Examples:
+
+- Empty truck bay (8): one truck (8), or two cars (4+4), or four bikes (2×4)
+- Car bay (4): one car, or two bikes — **not** a truck
+
+`tryOccupy` (still under the slot lock from Follow-up 1):
+
+```text
+lock(slot)
+if used + size <= max:
+    used += size
+    success
+unlock
+```
+
+“Occupied” for a full bay: `used == max`. You can keep `isFull()` instead of a bool that ignores leftover space.
+
+You can still have **two allocation strategies**:
+
+| Strategy | Rule |
+|---|---|
+| `StandardAllocationStrategy` | One vehicle, one slot (`maxCapacity` treated as 1, or only match exact type) |
+| `CapacityAllocationStrategy` | Fit by remaining capacity (smaller vehicles in larger bays) |
+
+That’s still **SlotAvailableStrategy** / allocation — not a new pattern zoo. Inject which rule `ParkingLot` uses.
+
+### Release — you do **not** need a ReleaseStrategy
+
+Occupy and release are **the same rule, inverted**. A second strategy would duplicate it and drift out of sync.
+
+On **entry**, the ticket must store **what you took**:
+
+```text
+Ticket
+├── vehicle          (has size)
+├── parkingSlot      (or list of slots if truck took two car bays)
+└── capacityUsed     (optional; or derive from vehicle.size)
+```
+
+On **exit**:
+
+```text
+lock(slot)
+usedCapacity -= ticket.capacityUsed   // or vehicle.size
+unlock
+```
+
+If `usedCapacity == 0`, the bay is empty. You do **not** “mark occupied false” as a special strategy — leftover capacity is just `used > 0`.
+
+If a truck took **two car slots**, ticket holds `{slotA, slotB}`. Release both (each under its lock). Still no ReleaseStrategy: **ticket is the memory of the allocation.**
+
+```text
+entry:  strategy decides WHERE + HOW MUCH
+        ticket records slot(s) + size
+exit:   ticket tells you what to put back
+```
+
+### Class diagram (after this follow-up)
+
+```mermaid
+classDiagram
+    class Vehicle {
+        -VehicleType type
+        -int size
+    }
+
+    class ParkingSlot {
+        -int maxCapacity
+        -int usedCapacity
+        +tryOccupy(int size) bool
+        +release(int size) void
+        +remaining() int
+    }
+
+    class Ticket {
+        -Vehicle* vehicle
+        -ParkingSlot* parkingSlot
+        -int capacityUsed
+    }
+
+    class SlotAvailableStrategy {
+        <<interface>>
+        +findAndOccupy(floors, Vehicle) ParkingSlot*
+    }
+
+    class StandardAllocationStrategy
+    class CapacityAllocationStrategy
+
+    ParkingLot --> SlotAvailableStrategy : HAS-A
+    StandardAllocationStrategy --|> SlotAvailableStrategy
+    CapacityAllocationStrategy --|> SlotAvailableStrategy
+    Ticket --> ParkingSlot : remembers what to release
+    Vehicle --> size : how much to add/subtract
+```
+
+### Interview line
+
+> Equality of types isn’t enough — I ask if the vehicle **fits**. I’ll give slots remaining capacity and vehicles a size. `tryOccupy` / `release` add and subtract size under the slot lock. I don’t need a separate release strategy: the **ticket** stores slot and capacity used, exit just reverses occupy. If a truck needs two car spots, the ticket holds both slots.
 
 ---
 
