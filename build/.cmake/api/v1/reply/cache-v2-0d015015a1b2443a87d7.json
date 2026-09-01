@@ -1562,6 +1562,42 @@
 			"value" : "C:/Users/sahil/OneDrive/Documents/LLD/Design Pattern/Singleton Pattern"
 		},
 		{
+			"name" : "Splitwise_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "C:/Users/sahil/OneDrive/Documents/LLD/build/Questions/Splitwise"
+		},
+		{
+			"name" : "Splitwise_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "OFF"
+		},
+		{
+			"name" : "Splitwise_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "C:/Users/sahil/OneDrive/Documents/LLD/Questions/Splitwise"
+		},
+		{
 			"name" : "StrategyPattern_BINARY_DIR",
 			"properties" : 
 			[
@@ -1607,7 +1643,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/sahil/OneDrive/Documents/LLD/build/Questions/Tic Tac Toe"
+			"value" : "C:/Users/sahil/OneDrive/Documents/LLD/build/Questions/Splitwise"
 		},
 		{
 			"name" : "TicTacToe_IS_TOP_LEVEL",
@@ -1631,7 +1667,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/sahil/OneDrive/Documents/LLD/Questions/Tic Tac Toe"
+			"value" : "C:/Users/sahil/OneDrive/Documents/LLD/Questions/Splitwise"
 		}
 	],
 	"kind" : "cache",

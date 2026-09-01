@@ -311,6 +311,15 @@ SingletonPattern_IS_TOP_LEVEL:STATIC=OFF
 SingletonPattern_SOURCE_DIR:STATIC=C:/Users/sahil/OneDrive/Documents/LLD/Design Pattern/Singleton Pattern
 
 //Value Computed by CMake
+Splitwise_BINARY_DIR:STATIC=C:/Users/sahil/OneDrive/Documents/LLD/build/Questions/Splitwise
+
+//Value Computed by CMake
+Splitwise_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+Splitwise_SOURCE_DIR:STATIC=C:/Users/sahil/OneDrive/Documents/LLD/Questions/Splitwise
+
+//Value Computed by CMake
 StrategyPattern_BINARY_DIR:STATIC=C:/Users/sahil/OneDrive/Documents/LLD/build/Design Pattern/Strategy Design Pattern
 
 //Value Computed by CMake
@@ -320,13 +329,13 @@ StrategyPattern_IS_TOP_LEVEL:STATIC=OFF
 StrategyPattern_SOURCE_DIR:STATIC=C:/Users/sahil/OneDrive/Documents/LLD/Design Pattern/Strategy Design Pattern
 
 //Value Computed by CMake
-TicTacToe_BINARY_DIR:STATIC=C:/Users/sahil/OneDrive/Documents/LLD/build/Questions/Tic Tac Toe
+TicTacToe_BINARY_DIR:STATIC=C:/Users/sahil/OneDrive/Documents/LLD/build/Questions/Splitwise
 
 //Value Computed by CMake
 TicTacToe_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
-TicTacToe_SOURCE_DIR:STATIC=C:/Users/sahil/OneDrive/Documents/LLD/Questions/Tic Tac Toe
+TicTacToe_SOURCE_DIR:STATIC=C:/Users/sahil/OneDrive/Documents/LLD/Questions/Splitwise
 
 
 ########################

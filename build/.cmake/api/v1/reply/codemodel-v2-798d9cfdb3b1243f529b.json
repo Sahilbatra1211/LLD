@@ -20,15 +20,15 @@
 					"source" : "."
 				},
 				{
-					"build" : "Questions/Parking Lot",
-					"jsonFile" : "directory-Questions.Parking Lot-Debug-a5fbd03c32635ce55527.json",
+					"build" : "Questions/Splitwise",
+					"jsonFile" : "directory-Questions.Splitwise-Debug-a302436ea08f9372fa55.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.20"
 					},
 					"parentIndex" : 0,
 					"projectIndex" : 1,
-					"source" : "Questions/Parking Lot",
+					"source" : "Questions/Splitwise",
 					"targetIndexes" : 
 					[
 						0
@@ -54,7 +54,7 @@
 					[
 						1
 					],
-					"name" : "ParkingLot",
+					"name" : "Splitwise",
 					"parentIndex" : 0,
 					"targetIndexes" : 
 					[
@@ -66,9 +66,9 @@
 			[
 				{
 					"directoryIndex" : 1,
-					"id" : "ParkingLot::@31ad6cd45eda3f0024ba",
-					"jsonFile" : "target-ParkingLot-Debug-6a0c5e6b3e1e7b420ed9.json",
-					"name" : "ParkingLot",
+					"id" : "Splitwise::@6131e8390febfadaa96e",
+					"jsonFile" : "target-Splitwise-Debug-443dbea2f2bcbfb5e63b.json",
+					"name" : "Splitwise",
 					"projectIndex" : 1
 				}
 			]

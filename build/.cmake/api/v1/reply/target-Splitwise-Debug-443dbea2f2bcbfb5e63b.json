@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "Questions/Parking Lot/ParkingLot.exe"
+			"path" : "Questions/Splitwise/Splitwise.exe"
 		},
 		{
-			"path" : "Questions/Parking Lot/ParkingLot.pdb"
+			"path" : "Questions/Splitwise/Splitwise.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -17,7 +17,7 @@
 		],
 		"files" : 
 		[
-			"Questions/Parking Lot/CMakeLists.txt"
+			"Questions/Splitwise/CMakeLists.txt"
 		],
 		"nodes" : 
 		[
@@ -61,7 +61,7 @@
 			]
 		}
 	],
-	"id" : "ParkingLot::@31ad6cd45eda3f0024ba",
+	"id" : "Splitwise::@6131e8390febfadaa96e",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -77,12 +77,12 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "ParkingLot",
-	"nameOnDisk" : "ParkingLot.exe",
+	"name" : "Splitwise",
+	"nameOnDisk" : "Splitwise.exe",
 	"paths" : 
 	{
-		"build" : "Questions/Parking Lot",
-		"source" : "Questions/Parking Lot"
+		"build" : "Questions/Splitwise",
+		"source" : "Questions/Splitwise"
 	},
 	"sourceGroups" : 
 	[
@@ -99,7 +99,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "Questions/Parking Lot/main.cpp",
+			"path" : "Questions/Splitwise/main.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],
