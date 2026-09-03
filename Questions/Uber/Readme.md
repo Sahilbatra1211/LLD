@@ -330,7 +330,209 @@ classDiagram
     CompletedState --|> RideState
 ```
 
-**Next open question (don’t implement yet):** rider vs driver cancel **before** pickup vs **after** pickup — if those rules explode, State Pattern starts to earn its keep.
+---
+
+## Follow-up: rider vs driver cancel (State Pattern earns its keep)
+
+**Not:** “two cancel functions, therefore State Pattern.”
+
+**Yes:** **each operation’s behavior depends on the ride’s state**, and that matrix grows across `start` / `complete` / `cancelByRider` / `cancelByDriver` / refund.
+
+```text
+                    WAITING_FOR_RIDER     IN_PROGRESS     COMPLETED
+                    -----------------     -----------     ---------
+Rider cancels       ✅ allowed            ❌              ❌
+Driver cancels      ✅ allowed            ⚠️ special      ❌
+Start               ✅                    ❌              ❌
+Complete            ❌                    ✅              ❌
+Refund              ?                     ?              ✅
+```
+
+Rider cancel only **before start**. Driver cancel **before pickup** vs **after pickup** = different rules. That’s **state × actor**, not two unrelated methods.
+
+If you keep an enum, `Ride` becomes:
+
+```cpp
+cancelByRider()  { if WAITING ... else if IN_PROGRESS ... }
+cancelByDriver() { if WAITING ... else if IN_PROGRESS ... }
+start()          { if WAITING ... }
+complete()       { if IN_PROGRESS ... }
+```
+
+That’s a **state × behavior matrix**. Then State Pattern:
+
+```text
+Ride
+ └── currentState
+        ├── WaitingForRiderState   cancelByRider / cancelByDriver / start
+        ├── InProgressState        cancelByRider ❌ / cancelByDriver ⚠️ / complete
+        └── CompletedState         mostly no-ops or refund
+```
+
+**2–3 `if`s** → enum is still fine. **Many operations × many states** → State Pattern. That’s the interview judgment.
+
+### Class diagram (cancel matrix)
+
+```mermaid
+classDiagram
+    class Ride {
+        -RideState* currentState
+        +start()
+        +complete()
+        +cancelByRider()
+        +cancelByDriver()
+        +setState(RideState*)
+    }
+    class RideState {
+        <<interface>>
+        +start(Ride*)
+        +complete(Ride*)
+        +cancelByRider(Ride*)
+        +cancelByDriver(Ride*)
+    }
+    class WaitingForRiderState {
+        +start(Ride*)
+        +cancelByRider(Ride*)
+        +cancelByDriver(Ride*)
+    }
+    class InProgressState {
+        +complete(Ride*)
+        +cancelByDriver(Ride*)
+    }
+    class CompletedState
+    Ride --> RideState : HAS-A
+    WaitingForRiderState --|> RideState
+    InProgressState --|> RideState
+    CompletedState --|> RideState
+    WaitingForRiderState ..> Ride : setState(InProgress)
+```
+
+`Ride.cancelByRider()` still exists — it **forwards** to `currentState`. Callers don’t switch on the enum.
+
+### Who changes Waiting → InProgress?
+
+**`Ride` owns the pointer. The current state decides when to change it.**
+
+```text
+RideService.startRide(id, driverId)
+    ↓
+Ride.start()                    // still the API
+    ↓
+currentState->start(this)       // WaitingForRiderState
+    ↓
+validate (assigned driver, etc.)
+    ↓
+ride->setState(new InProgressState())
+```
+
+`WaitingForRiderState` should **not** poke `Ride`’s private `status` field. It calls **`ride->setState(...)`** (same as the Light example: `OffState` calls `light->setState(new OnState())`).
+
+Alternative (also fine): `start()` **returns** the next state, `Ride` applies it — only `Ride` assigns `currentState`. The **decision** still lives in `WaitingForRiderState`.
+
+| | Role |
+|---|---|
+| `Ride` | Owns `currentState`, exposes `setState` / `start()` |
+| `WaitingForRiderState` | Knows “successful start → InProgress” |
+| `RideService` | Use case + “is this the assigned driver?” — then `ride.start()`, not `setState` from the service |
+
+**Interview line:** *Cancellation isn’t two strategies; it’s the same operations behaving differently per state. When that matrix is large, I delegate to state objects. Transitions: the state calls `ride.setState`; Ride still owns the lifecycle.*
+
+---
+
+## Follow-up: RideService must not flip Ride’s state
+
+If we use State Pattern, **`RideService` does not change internal state.**
+
+```text
+RideService   →  coordinates the use case
+Ride          →  owns currentState  (setState is private)
+RideState     →  behavior for this state
+```
+
+```text
+RideService
+    |
+    |  ride.start()          // public API only
+    ↓
+Ride
+    |
+    |  currentState->start(this)
+    ↓
+WaitingForRiderState
+    |
+    |  valid → Ride.setState(InProgress)   // private / friend
+```
+
+`setState()` should **not** be public. Otherwise anyone can skip the machine:
+
+```cpp
+class Ride {
+    RideState* state;
+    void setState(RideState* newState);   // private
+public:
+    void start();
+    void complete();
+    void cancelByRider();
+    void cancelByDriver();
+};
+```
+
+### Why not RideService?
+
+```text
+RideService:
+    if ride.getState() == WAITING
+        ride.setState(IN_PROGRESS)     ❌
+```
+
+Then the service **is** the state machine again. Tomorrow’s rules pile up in the service — the opposite of why we added State Pattern.
+
+```text
+                    Responsibility
+                         |
+        +----------------+----------------+
+        |                |                |
+   RideService          Ride          RideState
+   use cases          owns state      state behavior
+```
+
+**Use-case orchestration** stays on `RideService` (load ride, check assigned driver, call `ride.start()`, maybe notify).
+
+**State-dependent rules** (can we start? rider cancel? driver cancel after pickup?) live on **state objects**.
+
+Arbitrary classes must not freely `setState`.
+
+### Test question
+
+> In `WaitingForRiderState`, driver calls `startRide()`. Should **that state** contain “go to `InProgressState`”, or only say “start is allowed” and let **`Ride`** transition?
+
+**Either is fine** if `setState` stays inside `Ride` + states.
+
+| Approach | Who knows “WAITING + start → IN_PROGRESS”? |
+|---|---|
+| **A — State triggers** | `WaitingForRiderState` calls private `ride.setState(InProgress)` (Light pattern) |
+| **B — Ride applies** | State returns “ok” / next-state enum; `Ride.start()` assigns `currentState` |
+
+Interview answer: *The service never chooses InProgress. Either the waiting state requests the transition via private `setState`, or `Ride` applies it after the state says start is legal. External code only calls `ride.start()`.*
+
+```mermaid
+classDiagram
+    class RideService {
+        +startRide(rideId, driverId)
+    }
+    class Ride {
+        -RideState* state
+        -setState(RideState*)
+        +start()
+        +complete()
+    }
+    class WaitingForRiderState {
+        +start(Ride*)
+    }
+    RideService ..> Ride : start() only
+    Ride --> WaitingForRiderState : HAS-A current
+    WaitingForRiderState ..> Ride : private setState
+```
 
 ---
 
