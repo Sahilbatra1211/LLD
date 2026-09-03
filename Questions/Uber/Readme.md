@@ -4,6 +4,137 @@ Simplified Uber/Ola. Focus: **responsibilities**, not GPS, network, DB, payment 
 
 ---
 
+## Final code class diagram
+
+This matches the **current `.h` files**, not the later conceptual notes. Stubs and missing wiring are shown as they are.
+
+```text
+bookACab:     Assignment.findDriver → RideService.createNewRide
+startJourney: RideService.validateDriver → RideService.startJourney (setState RideInProgress)
+complete:     validateDriver → completeJourney (setState RideCompleted)
+              → FareService.calculateFare → updateFare → PaymentService.initiatePayment
+```
+
+```mermaid
+classDiagram
+    class UberApp {
+        -DriverAssignmentService* driverAssignmentService
+        -RideService* rideService
+        -FareService* fareService
+        -PaymentService* paymentService
+        +bookACab(Location*, Location*, Rider*) Ride*
+        +startJourney(Driver*, Ride*) bool
+        +completeJourney(Ride*, Driver*) bool
+    }
+
+    class DriverAssignmentService {
+        +findDriver(Location*, Location*) Driver*
+    }
+
+    class RideService {
+        -RideStore* rideStore
+        +createNewRide(Location*, Location*, Driver*, Rider*) Ride*
+        +validateDriver(Driver*, Ride*) bool
+        +startJourney(Ride*) bool
+        +completeJourney(Ride*) bool
+        +updateFare(Ride*)
+    }
+
+    class RideStore {
+        -vector~Ride*~ rides
+    }
+
+    class FareService {
+        -FareCalculationStrategy* fareCalculationStrategy
+        +calculateFare(Ride*) int
+    }
+
+    class FareCalculationStrategy {
+        <<interface>>
+        +calculateFare(Ride*) int
+    }
+
+    class PaymentService {
+        +initiatePayment()
+    }
+
+    class Ride {
+        -Location* src
+        -Location* dest
+        -Driver* driver
+        -Rider* rider
+        -Rating* rating
+        -RideState* rideState
+        -int fare
+        -PaymentStatus payementStatus
+        +Ride(...)
+        +setState(RideState*)
+    }
+
+    class RideState
+    class DriverWaiting
+    class RideInProgress
+    class RideCompleted
+
+    class User {
+        -int id
+        -string name
+    }
+    class Rider
+    class Driver
+    class Location {
+        -int latitude
+        -int longitude
+    }
+    class Rating {
+        -User* from
+        -User* to
+        -string comments
+        -int rating
+        -PaymentStatus payement
+    }
+    class PaymentStatus {
+        <<enumeration>>
+        PAYMENT_SUCCESSFUL
+        PAYMENT_FAILED
+        PAYMENT_RETRY
+        PAYMENT_REFUND
+    }
+
+    UberApp --> DriverAssignmentService : HAS-A
+    UberApp --> RideService : HAS-A
+    UberApp --> FareService : HAS-A
+    UberApp --> PaymentService : HAS-A
+    RideService --> RideStore : HAS-A
+    RideService ..> Ride : create / setState
+    RideService ..> RideInProgress : new on start
+    RideService ..> RideCompleted : new on complete
+    FareService --> FareCalculationStrategy : HAS-A
+    RideStore --> Ride : stores
+    Ride --> Location : src dest
+    Ride --> Driver
+    Ride --> Rider
+    Ride --> Rating
+    Ride --> RideState : HAS-A
+    Ride --> PaymentStatus
+    Ride ..> DriverWaiting : initial new
+    DriverWaiting --|> RideState : IS-A
+    RideInProgress --|> RideState : IS-A
+    RideCompleted --|> RideState : IS-A
+    Rider --|> User : IS-A
+    Driver --|> User : IS-A
+    Rating --> User : from to
+    Rating --> PaymentStatus
+```
+
+| In notes, not in this code yet |
+|---|
+| `FindDriverStrategy` / `NearestDriverStrategy` (file empty; assignment returns a hardcoded `Driver`) |
+| `NotificationService` |
+| Private `setState` on `Ride` — **code has public `setState`; `RideService` calls it** |
+
+---
+
 ## Requirements
 
 1. Rider requests a ride  
