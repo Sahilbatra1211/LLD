@@ -8,7 +8,7 @@ enum class Symbol{
     O
 };
 
-string symbolToString(Symbol symbol) {
+inline string symbolToString(Symbol symbol) {
     switch (symbol) {
         case Symbol::EMPTY: return "EMPTY";
         case Symbol::X:     return "X";
