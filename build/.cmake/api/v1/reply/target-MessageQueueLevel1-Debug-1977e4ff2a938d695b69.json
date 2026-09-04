@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "Questions/Splitwise/Splitwise.exe"
+			"path" : "Questions/Message Queues/Level 1/MessageQueueLevel1.exe"
 		},
 		{
-			"path" : "Questions/Splitwise/Splitwise.pdb"
+			"path" : "Questions/Message Queues/Level 1/MessageQueueLevel1.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -17,7 +17,7 @@
 		],
 		"files" : 
 		[
-			"Questions/Splitwise/CMakeLists.txt"
+			"Questions/Message Queues/Level 1/CMakeLists.txt"
 		],
 		"nodes" : 
 		[
@@ -61,7 +61,7 @@
 			]
 		}
 	],
-	"id" : "Splitwise::@6131e8390febfadaa96e",
+	"id" : "MessageQueueLevel1::@cc0db9697a1c68c4a827",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -77,12 +77,12 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "Splitwise",
-	"nameOnDisk" : "Splitwise.exe",
+	"name" : "MessageQueueLevel1",
+	"nameOnDisk" : "MessageQueueLevel1.exe",
 	"paths" : 
 	{
-		"build" : "Questions/Splitwise",
-		"source" : "Questions/Splitwise"
+		"build" : "Questions/Message Queues/Level 1",
+		"source" : "Questions/Message Queues/Level 1"
 	},
 	"sourceGroups" : 
 	[
@@ -99,7 +99,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "Questions/Splitwise/main.cpp",
+			"path" : "Questions/Message Queues/Level 1/main.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

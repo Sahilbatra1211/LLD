@@ -20,15 +20,15 @@
 					"source" : "."
 				},
 				{
-					"build" : "Questions/Splitwise",
-					"jsonFile" : "directory-Questions.Splitwise-Debug-a302436ea08f9372fa55.json",
+					"build" : "Questions/Message Queues/Level 1",
+					"jsonFile" : "directory-Questions.Message Queues.Level 1-Debug-d74ffd4923ca0d0aa562.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.20"
 					},
 					"parentIndex" : 0,
 					"projectIndex" : 1,
-					"source" : "Questions/Splitwise",
+					"source" : "Questions/Message Queues/Level 1",
 					"targetIndexes" : 
 					[
 						0
@@ -54,7 +54,7 @@
 					[
 						1
 					],
-					"name" : "Splitwise",
+					"name" : "MessageQueueLevel1",
 					"parentIndex" : 0,
 					"targetIndexes" : 
 					[
@@ -66,9 +66,9 @@
 			[
 				{
 					"directoryIndex" : 1,
-					"id" : "Splitwise::@6131e8390febfadaa96e",
-					"jsonFile" : "target-Splitwise-Debug-443dbea2f2bcbfb5e63b.json",
-					"name" : "Splitwise",
+					"id" : "MessageQueueLevel1::@cc0db9697a1c68c4a827",
+					"jsonFile" : "target-MessageQueueLevel1-Debug-1977e4ff2a938d695b69.json",
+					"name" : "MessageQueueLevel1",
 					"projectIndex" : 1
 				}
 			]

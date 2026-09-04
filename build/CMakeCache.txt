@@ -275,6 +275,15 @@ LLD_IS_TOP_LEVEL:STATIC=ON
 LLD_SOURCE_DIR:STATIC=C:/Users/sahil/OneDrive/Documents/LLD
 
 //Value Computed by CMake
+MessageQueueLevel1_BINARY_DIR:STATIC=C:/Users/sahil/OneDrive/Documents/LLD/build/Questions/Message Queues/Level 1
+
+//Value Computed by CMake
+MessageQueueLevel1_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+MessageQueueLevel1_SOURCE_DIR:STATIC=C:/Users/sahil/OneDrive/Documents/LLD/Questions/Message Queues/Level 1
+
+//Value Computed by CMake
 MultiThreading_BINARY_DIR:STATIC=C:/Users/sahil/OneDrive/Documents/LLD/build/Multi-Threading
 
 //Value Computed by CMake

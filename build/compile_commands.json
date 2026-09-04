@@ -1,8 +1,8 @@
 [
 {
   "directory": "C:/Users/sahil/OneDrive/Documents/LLD/build",
-  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -g -std=gnu++20 -o Questions\\Splitwise\\CMakeFiles\\Splitwise.dir\\main.cpp.obj -c C:\\Users\\sahil\\OneDrive\\Documents\\LLD\\Questions\\Splitwise\\main.cpp",
-  "file": "C:/Users/sahil/OneDrive/Documents/LLD/Questions/Splitwise/main.cpp",
-  "output": "C:/Users/sahil/OneDrive/Documents/LLD/build/Questions/Splitwise/CMakeFiles/Splitwise.dir/main.cpp.obj"
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -g -std=gnu++20 -o \"Questions\\Message Queues\\Level 1\\CMakeFiles\\MessageQueueLevel1.dir\\main.cpp.obj\" -c \"C:\\Users\\sahil\\OneDrive\\Documents\\LLD\\Questions\\Message Queues\\Level 1\\main.cpp\"",
+  "file": "C:/Users/sahil/OneDrive/Documents/LLD/Questions/Message Queues/Level 1/main.cpp",
+  "output": "C:/Users/sahil/OneDrive/Documents/LLD/build/Questions/Message Queues/Level 1/CMakeFiles/MessageQueueLevel1.dir/main.cpp.obj"
 }
 ]

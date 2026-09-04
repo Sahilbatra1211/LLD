@@ -2,6 +2,8 @@
 
 First: **what a queue is for**. Brokers (Kafka, RabbitMQ, SQS) come later.
 
+**In-memory LLD (classes, ACK, DLQ):** [LLD.md](./LLD.md)
+
 ---
 
 ## 1. Why do we need a Message Queue?
@@ -809,7 +811,7 @@ A consumer can **continue from its offset** (or rewind, depending on config). Th
 4. What if processing **fails**? → **retry / DLQ**  
 5. What **delivery guarantee**? → at-most-once / at-least-once / exactly-once  
 
-Once those are clear, we can design an **in-memory Message Queue LLD**.
+Once those are clear, we can design an **in-memory Message Queue LLD** → [LLD.md](./LLD.md).
 
 
 

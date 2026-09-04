@@ -1418,6 +1418,42 @@
 			"value" : "C:/Users/sahil/OneDrive/Documents/LLD"
 		},
 		{
+			"name" : "MessageQueueLevel1_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "C:/Users/sahil/OneDrive/Documents/LLD/build/Questions/Message Queues/Level 1"
+		},
+		{
+			"name" : "MessageQueueLevel1_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "OFF"
+		},
+		{
+			"name" : "MessageQueueLevel1_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "C:/Users/sahil/OneDrive/Documents/LLD/Questions/Message Queues/Level 1"
+		},
+		{
 			"name" : "MultiThreading_BINARY_DIR",
 			"properties" : 
 			[
