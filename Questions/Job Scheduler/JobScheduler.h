@@ -13,6 +13,10 @@ class Job{
     Job(int id,string name):id(id),name(name){
 
     }
+
+    void execute(){
+        cout<<"execute a job"<<endl;
+    }
 };
 
 
@@ -21,6 +25,7 @@ class JobScheduler {
     vector<thread> threads;
     mutex mtx;
     condition_variable cv;
+    int shutDown;
 
 public:
 
@@ -37,15 +42,27 @@ public:
         cv.notify_one();
     }
 
-    void schedule(){
-        while(1){
-            unique_lock<mutex> l(mtx);
-            cv.wait(l,[this]{return !jobQueue.empty();});
-            Job* j=jobQueue.front();
-            jobQueue.pop();
-            cout<<"some job executed"<<endl;
-            l.unlock();        
+        void schedule(){
+            while(1){
+                unique_lock<mutex> l(mtx);
+                cv.wait(l,[this]{return (!jobQueue.empty()|| shutDown);});
+                if(jobQueue.empty() && shutDown)break;
+                Job* j=jobQueue.front();
+                jobQueue.pop();
+                l.unlock();     
+                try{
+                    j->execute();
+                }
+                catch(exception e){
+                    // consume;
+                } 
+            }
         }
+
+    void shutdown(){
+        unique_lock<mutex> l(mtx);
+        shutDown=1;
+        cv.notify_all();
     }
 
 
