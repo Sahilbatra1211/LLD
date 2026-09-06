@@ -366,16 +366,208 @@ Don’t smash different state models into one generic store “for abstraction.�
 
 ### 10. Distributed rate limiter
 
-Not deep in this code yet. Multiple instances:
+#### Local in-memory state fails across servers
 
 ```text
-Server A → local counter
-Server B → local counter
+             Load Balancer
+            /      |      \
+         Server A Server B Server C
+            |       |       |
+         Local    Local    Local
+         Store    Store    Store
 ```
 
-Together they can **exceed** the limit.
+Limit = **100 requests/min/user**. User sends 60 to A and 60 to B:
 
-**Follow-up:** shared store (e.g. **Redis**) + **atomic** check-and-update (Lua / `INCR` with TTL / token-bucket script). Same `read → check → update` race, now across machines.
+```text
+A → 60 < 100 → allow
+B → 60 < 100 → allow
+60 + 60 = 120 globally  ❌
+```
+
+Each server only sees **its** counter. Local memory **cannot** enforce a **global** limit.
+
+#### Shared Redis
+
+```text
+Server A ─┐
+Server B ─┤
+Server C ─┼──→ Redis
+Server D ─┘
+```
+
+Every server sees the same counter (`user 123 → count = 99`). State is **global**, not per-server.
+
+That matches the store abstraction:
+
+```text
+RateLimiter
+     ↓
+ Strategy
+     ↓
+ RequestStore
+    /    \
+InMemory Redis
+```
+
+**Strategy should not care** whether the store is local or Redis.
+
+#### Shared state is not enough
+
+Unsafe:
+
+```text
+GET count
+if count < limit
+    INCREMENT count
+```
+
+```text
+Initial count = 99
+Server A → GET → 99
+Server B → GET → 99
+A → 99 < 100 → increment
+B → 99 < 100 → increment
+Final count = 101  ❌
+```
+
+**Check + update must be atomic** — same race as in-process, now across machines.
+
+With Redis: atomic op / **Lua script** on the server:
+
+```text
+if count < limit:
+    increment
+    return ALLOW
+else:
+    return REJECT
+```
+
+The whole thing runs **inside Redis**, not two round-trips from the API.
+
+#### Redis key design (fixed window)
+
+```text
+rl:user:123:<windowId>
+e.g. rl:user:123:293847
+```
+
+| Part | Meaning |
+|---|---|
+| Who | user 123 |
+| Window | current fixed window |
+| Value | request count |
+
+Same pattern, different scopes:
+
+```text
+rl:user:123:<window>
+rl:ip:10.1.1.1:<window>
+rl:endpoint:/login:<window>
+```
+
+#### TTL
+
+**TTL** = time to live — Redis **deletes** the key after X seconds.
+
+Rate-limit state is **temporary**. Don’t keep old counters forever.
+
+```text
+rl:user:123:293847
+count = 57
+TTL   = 23 seconds
+        ↓
+key gone
+```
+
+Stops Redis filling up with dead window keys. (Same *idea* as evicting per-key mutexes locally.)
+
+#### Redis failure / HA
+
+Redis should not be a **single point of failure**.
+
+```text
+Redis Primary
+     ↓
+Redis Replica
+```
+
+or **cluster / HA**.
+
+| | |
+|---|---|
+| **Replication / cluster** | Stay up when a **node** dies |
+| **Backup** | Recover **data** after a failure |
+
+For a rate limiter, counters are **short-lived** — they are not precious history. **HA / replication matters more than traditional backup.**
+
+#### If Redis is completely down — failure policy
+
+**Fail-open**
+
+```text
+Redis unavailable
+       ↓
+Allow request
+```
+
+| Pros | Cons |
+|---|---|
+| API stays up | Limit can be violated; abuse / load |
+
+**Fail-closed**
+
+```text
+Redis unavailable
+       ↓
+Reject request
+```
+
+| Pros | Cons |
+|---|---|
+| Strict limit; protects backend | Redis outage ≈ API outage |
+
+This is a **business** choice: strict limiter → fail-closed; availability first → fail-open.
+
+#### HTTP status when Redis is down
+
+**Do not return 429** just because Redis is unavailable.
+
+**429 Too Many Requests** = the client **actually exceeded** the limit. If Redis is down, **you don’t know that**.
+
+Fail-closed because of an **internal** limiter failure:
+
+```text
+Redis unavailable
+       ↓
+Rate limiter cannot decide
+       ↓
+503 Service Unavailable
+```
+
+#### Final architecture (distributed)
+
+```text
+                    RateLimiter
+                         |
+                  Policy / Resolver
+                         |
+                    Strategy
+                 /      |       \
+          FixedWindow  Sliding   TokenBucket
+                 \      |       /
+                  RequestStore
+                       |
+              ┌────────┴────────┐
+              │                 │
+          InMemory            Redis
+                                |
+                         Atomic operation
+                                |
+                         Replication / HA
+```
+
+**Interview line:** *Local counters over-allow across boxes. Shared Redis + atomic check-and-update. TTL on keys. HA not backup. Fail-open vs fail-closed is product. Redis down ≠ 429; fail-closed → 503.*
 
 ---
 
