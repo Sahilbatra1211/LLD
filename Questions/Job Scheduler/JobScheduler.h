@@ -19,7 +19,8 @@ class Job{
     }
 };
 
-
+// this is not a scheduler but an executor because it doesn't have the concept of scheduling. it just executes the jobs.
+// refer to Job Scheduler 2 for the scheduler implementation.
 class JobScheduler {
     queue<Job*> jobQueue;
     vector<thread> threads;
