@@ -130,7 +130,77 @@ build Questions/Message$ Queues/Level$ 1/CMakeFiles/rebuild_cache.util: CUSTOM_C
 build Questions/Message$ Queues/Level$ 1/rebuild_cache: phony Questions/Message$ Queues/Level$ 1/CMakeFiles/rebuild_cache.util
 
 # =============================================================================
+# Write statements declared in CMakeLists.txt:
+# C:/Users/sahil/OneDrive/Documents/LLD/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for EXECUTABLE target JobScheduler
+
+
+#############################################
+# Order-only phony target for JobScheduler
+
+build cmake_object_order_depends_target_JobScheduler: phony || .
+
+build Questions/Job$ Scheduler/CMakeFiles/JobScheduler.dir/main.cpp.obj: CXX_COMPILER__JobScheduler_unscanned_Debug C$:/Users/sahil/OneDrive/Documents/LLD/Questions/Job$ Scheduler/main.cpp || cmake_object_order_depends_target_JobScheduler
+  CONFIG = Debug
+  DEP_FILE = "Questions\Job Scheduler\CMakeFiles\JobScheduler.dir\main.cpp.obj.d"
+  FLAGS = -g -std=gnu++20
+  OBJECT_DIR = "Questions\Job Scheduler\CMakeFiles\JobScheduler.dir"
+  OBJECT_FILE_DIR = "Questions\Job Scheduler\CMakeFiles\JobScheduler.dir"
+  TARGET_SUPPORT_DIR = "Questions\Job Scheduler\CMakeFiles\JobScheduler.dir"
+  depfile = Questions\Job Scheduler\CMakeFiles\JobScheduler.dir\main.cpp.obj.d
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target JobScheduler
+
+
+#############################################
+# Link the executable Questions\Job Scheduler\JobScheduler.exe
+
+build Questions/Job$ Scheduler/JobScheduler.exe: CXX_EXECUTABLE_LINKER__JobScheduler_Debug Questions/Job$ Scheduler/CMakeFiles/JobScheduler.dir/main.cpp.obj
+  CONFIG = Debug
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = "Questions\Job Scheduler\CMakeFiles\JobScheduler.dir"
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = "Questions\Job Scheduler\JobScheduler.exe"
+  TARGET_IMPLIB = "Questions\Job Scheduler\libJobScheduler.dll.a"
+  TARGET_PDB = JobScheduler.exe.dbg
+  TARGET_SUPPORT_DIR = "Questions\Job Scheduler\CMakeFiles\JobScheduler.dir"
+
+
+#############################################
+# Utility command for edit_cache
+
+build Questions/Job$ Scheduler/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D "C:\Users\sahil\OneDrive\Documents\LLD\build\Questions\Job Scheduler" && C:\msys64\ucrt64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build Questions/Job$ Scheduler/edit_cache: phony Questions/Job$ Scheduler/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build Questions/Job$ Scheduler/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D "C:\Users\sahil\OneDrive\Documents\LLD\build\Questions\Job Scheduler" && C:\msys64\ucrt64\bin\cmake.exe --regenerate-during-build -SC:\Users\sahil\OneDrive\Documents\LLD -BC:\Users\sahil\OneDrive\Documents\LLD\build"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build Questions/Job$ Scheduler/rebuild_cache: phony Questions/Job$ Scheduler/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
 # Target aliases.
+
+build JobScheduler: phony Questions/Job$ Scheduler/JobScheduler.exe
+
+build JobScheduler.exe: phony Questions/Job$ Scheduler/JobScheduler.exe
 
 build MessageQueueLevel1: phony Questions/Message$ Queues/Level$ 1/MessageQueueLevel1.exe
 
@@ -144,7 +214,14 @@ build MessageQueueLevel1.exe: phony Questions/Message$ Queues/Level$ 1/MessageQu
 #############################################
 # Folder: C:/Users/sahil/OneDrive/Documents/LLD/build
 
-build all: phony Questions/Message$ Queues/Level$ 1/all
+build all: phony Questions/Message$ Queues/Level$ 1/all Questions/Job$ Scheduler/all
+
+# =============================================================================
+
+#############################################
+# Folder: C:/Users/sahil/OneDrive/Documents/LLD/build/Questions/Job Scheduler
+
+build Questions/Job$ Scheduler/all: phony Questions/Job$ Scheduler/JobScheduler.exe
 
 # =============================================================================
 
@@ -160,14 +237,14 @@ build Questions/Message$ Queues/Level$ 1/all: phony Questions/Message$ Queues/Le
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja C$:/Users/sahil/OneDrive/Documents/LLD/build/cmake_install.cmake C$:/Users/sahil/OneDrive/Documents/LLD/build/Questions/Message$ Queues/Level$ 1/cmake_install.cmake: RERUN_CMAKE | C$:/Users/sahil/OneDrive/Documents/LLD/CMakeLists.txt C$:/Users/sahil/OneDrive/Documents/LLD/Questions/Message$ Queues/Level$ 1/CMakeLists.txt C$:/msys64/ucrt64/share/cmake/Modules/CMakeCInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeCXXInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeCommonLanguageInclude.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeGenericSystem.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeInitializeConfigs.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeLanguageInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeRCInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeSystemSpecificInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Internal/CMakeCLinkerInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/Linker/GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Linker/GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Linker/GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Linker/GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Linker/Windows-GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Linker/Windows-GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Linker/Windows-GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-Initialize.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-windres.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/4.3.3/CMakeCCompiler.cmake CMakeFiles/4.3.3/CMakeCXXCompiler.cmake CMakeFiles/4.3.3/CMakeRCCompiler.cmake CMakeFiles/4.3.3/CMakeSystem.cmake
+build build.ninja C$:/Users/sahil/OneDrive/Documents/LLD/build/cmake_install.cmake C$:/Users/sahil/OneDrive/Documents/LLD/build/Questions/Message$ Queues/Level$ 1/cmake_install.cmake C$:/Users/sahil/OneDrive/Documents/LLD/build/Questions/Job$ Scheduler/cmake_install.cmake: RERUN_CMAKE | C$:/Users/sahil/OneDrive/Documents/LLD/CMakeLists.txt C$:/Users/sahil/OneDrive/Documents/LLD/Questions/Job$ Scheduler/CMakeLists.txt C$:/Users/sahil/OneDrive/Documents/LLD/Questions/Message$ Queues/Level$ 1/CMakeLists.txt C$:/msys64/ucrt64/share/cmake/Modules/CMakeCInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeCXXInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeCommonLanguageInclude.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeGenericSystem.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeInitializeConfigs.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeLanguageInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeRCInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeSystemSpecificInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Internal/CMakeCLinkerInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/Linker/GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Linker/GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Linker/GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Linker/GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Linker/Windows-GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Linker/Windows-GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Linker/Windows-GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-Initialize.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-windres.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/4.3.3/CMakeCCompiler.cmake CMakeFiles/4.3.3/CMakeCXXCompiler.cmake CMakeFiles/4.3.3/CMakeRCCompiler.cmake CMakeFiles/4.3.3/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build C$:/Users/sahil/OneDrive/Documents/LLD/CMakeLists.txt C$:/Users/sahil/OneDrive/Documents/LLD/Questions/Message$ Queues/Level$ 1/CMakeLists.txt C$:/msys64/ucrt64/share/cmake/Modules/CMakeCInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeCXXInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeCommonLanguageInclude.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeGenericSystem.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeInitializeConfigs.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeLanguageInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeRCInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeSystemSpecificInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Internal/CMakeCLinkerInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/Linker/GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Linker/GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Linker/GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Linker/GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Linker/Windows-GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Linker/Windows-GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Linker/Windows-GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-Initialize.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-windres.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/4.3.3/CMakeCCompiler.cmake CMakeFiles/4.3.3/CMakeCXXCompiler.cmake CMakeFiles/4.3.3/CMakeRCCompiler.cmake CMakeFiles/4.3.3/CMakeSystem.cmake: phony
+build C$:/Users/sahil/OneDrive/Documents/LLD/CMakeLists.txt C$:/Users/sahil/OneDrive/Documents/LLD/Questions/Job$ Scheduler/CMakeLists.txt C$:/Users/sahil/OneDrive/Documents/LLD/Questions/Message$ Queues/Level$ 1/CMakeLists.txt C$:/msys64/ucrt64/share/cmake/Modules/CMakeCInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeCXXInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeCommonLanguageInclude.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeGenericSystem.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeInitializeConfigs.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeLanguageInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeRCInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeSystemSpecificInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Compiler/GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Internal/CMakeCLinkerInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake C$:/msys64/ucrt64/share/cmake/Modules/Linker/GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Linker/GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Linker/GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Linker/GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Linker/Windows-GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Linker/Windows-GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Linker/Windows-GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-C.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU-CXX.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-GNU.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-Initialize.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows-windres.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/Windows.cmake C$:/msys64/ucrt64/share/cmake/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/4.3.3/CMakeCCompiler.cmake CMakeFiles/4.3.3/CMakeCXXCompiler.cmake CMakeFiles/4.3.3/CMakeRCCompiler.cmake CMakeFiles/4.3.3/CMakeSystem.cmake: phony
 
 
 #############################################

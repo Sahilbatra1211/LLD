@@ -4,5 +4,11 @@
   "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -g -std=gnu++20 -o \"Questions\\Message Queues\\Level 1\\CMakeFiles\\MessageQueueLevel1.dir\\main.cpp.obj\" -c \"C:\\Users\\sahil\\OneDrive\\Documents\\LLD\\Questions\\Message Queues\\Level 1\\main.cpp\"",
   "file": "C:/Users/sahil/OneDrive/Documents/LLD/Questions/Message Queues/Level 1/main.cpp",
   "output": "C:/Users/sahil/OneDrive/Documents/LLD/build/Questions/Message Queues/Level 1/CMakeFiles/MessageQueueLevel1.dir/main.cpp.obj"
+},
+{
+  "directory": "C:/Users/sahil/OneDrive/Documents/LLD/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -g -std=gnu++20 -o \"Questions\\Job Scheduler\\CMakeFiles\\JobScheduler.dir\\main.cpp.obj\" -c \"C:\\Users\\sahil\\OneDrive\\Documents\\LLD\\Questions\\Job Scheduler\\main.cpp\"",
+  "file": "C:/Users/sahil/OneDrive/Documents/LLD/Questions/Job Scheduler/main.cpp",
+  "output": "C:/Users/sahil/OneDrive/Documents/LLD/build/Questions/Job Scheduler/CMakeFiles/JobScheduler.dir/main.cpp.obj"
 }
 ]

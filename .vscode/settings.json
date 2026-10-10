@@ -2,8 +2,11 @@
     "cmake.sourceDirectory": "${workspaceFolder}",
     "cmake.buildDirectory": "${workspaceFolder}/build",
     "cmake.configureOnOpen": true,
+    "cmake.generator": "Ninja",
+    "cmake.preferredGenerators": ["Ninja"],
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
     "clangd.arguments": [
-    "--compile-commands-dir=build",
-    "--query-driver=C:/msys64/ucrt64/bin/g++.exe"
+        "--compile-commands-dir=build",
+        "--query-driver=C:/msys64/ucrt64/bin/g++.exe"
     ]
 }

@@ -217,6 +217,9 @@
 		},
 		{
 			"path" : "Questions/Message Queues/Level 1/CMakeLists.txt"
+		},
+		{
+			"path" : "Questions/Job Scheduler/CMakeLists.txt"
 		}
 	],
 	"kind" : "cmakeFiles",

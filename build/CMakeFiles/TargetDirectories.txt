@@ -3,3 +3,6 @@ C:/Users/sahil/OneDrive/Documents/LLD/build/CMakeFiles/rebuild_cache.dir
 C:/Users/sahil/OneDrive/Documents/LLD/build/Questions/Message Queues/Level 1/CMakeFiles/MessageQueueLevel1.dir
 C:/Users/sahil/OneDrive/Documents/LLD/build/Questions/Message Queues/Level 1/CMakeFiles/edit_cache.dir
 C:/Users/sahil/OneDrive/Documents/LLD/build/Questions/Message Queues/Level 1/CMakeFiles/rebuild_cache.dir
+C:/Users/sahil/OneDrive/Documents/LLD/build/Questions/Job Scheduler/CMakeFiles/JobScheduler.dir
+C:/Users/sahil/OneDrive/Documents/LLD/build/Questions/Job Scheduler/CMakeFiles/edit_cache.dir
+C:/Users/sahil/OneDrive/Documents/LLD/build/Questions/Job Scheduler/CMakeFiles/rebuild_cache.dir

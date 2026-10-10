@@ -9,7 +9,8 @@
 					"build" : ".",
 					"childIndexes" : 
 					[
-						1
+						1,
+						2
 					],
 					"jsonFile" : "directory-.-Debug-f040eec181a89de70dbe.json",
 					"minimumCMakeVersion" : 
@@ -31,6 +32,21 @@
 					"source" : "Questions/Message Queues/Level 1",
 					"targetIndexes" : 
 					[
+						1
+					]
+				},
+				{
+					"build" : "Questions/Job Scheduler",
+					"jsonFile" : "directory-Questions.Job Scheduler-Debug-f170b6050b104ade44a4.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 2,
+					"source" : "Questions/Job Scheduler",
+					"targetIndexes" : 
+					[
 						0
 					]
 				}
@@ -41,7 +57,8 @@
 				{
 					"childIndexes" : 
 					[
-						1
+						1,
+						2
 					],
 					"directoryIndexes" : 
 					[
@@ -58,12 +75,31 @@
 					"parentIndex" : 0,
 					"targetIndexes" : 
 					[
+						1
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "JobScheduler",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
 						0
 					]
 				}
 			],
 			"targets" : 
 			[
+				{
+					"directoryIndex" : 2,
+					"id" : "JobScheduler::@224e5ef468e281d3e1d7",
+					"jsonFile" : "target-JobScheduler-Debug-640b50661172bda1dd0a.json",
+					"name" : "JobScheduler",
+					"projectIndex" : 2
+				},
 				{
 					"directoryIndex" : 1,
 					"id" : "MessageQueueLevel1::@cc0db9697a1c68c4a827",
