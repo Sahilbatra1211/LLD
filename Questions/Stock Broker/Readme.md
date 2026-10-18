@@ -172,6 +172,129 @@ Wallet  = what money the user currently has
 
 ---
 
+## Exchange / matching-engine class diagram
+
+Use this when they ask you to **design the order book**, not only the broker. Broker notes above still apply for wallet / holdings; this is the **match** side.
+
+```text
+placeOrder
+    ↓
+OrderService
+    ↓
+OrderBookStore.getOrderBook(stockId)
+    ↓
+MatchingService.matchOrder(order, book)
+    ↓
+List<Trade>
+```
+
+```mermaid
+classDiagram
+    direction TB
+
+    class StockMarketApp {
+        +placeOrder(userId, stockId, side, type, quantity, limitPrice)
+        +cancelOrder(orderId)
+        +checkOrderStatus(orderId)
+    }
+
+    class OrderService {
+        -OrderBookStore bookStore
+        -OrderStore orderStore
+        -MatchingService matchingService
+        +placeOrder(Order)
+        +cancelOrder(orderId)
+        +getOrder(orderId)
+    }
+
+    class OrderBookStore {
+        -Map~StockId, OrderBook~ books
+        +getOrderBook(stockId)
+    }
+
+    class OrderStore {
+        -Map~OrderId, Order~ orders
+        +save(Order)
+        +get(orderId)
+        +update(Order)
+    }
+
+    class Order {
+        +string orderId
+        +string userId
+        +string stockId
+        +Side side
+        +OrderType type
+        +OrderStatus status
+        +int64 limitPrice
+        +int totalQuantity
+        +int filledQuantity
+        +long sequenceNumber
+        +getRemainingQuantity()
+    }
+
+    class OrderBook {
+        +string stockId
+        -Set~Order~ buyOrders
+        -Set~Order~ sellOrders
+        -Map~OrderId, Iterator~ orderIndex
+        +addOrder(Order)
+        +removeOrder(orderId)
+        +getBestBuy()
+        +getBestSell()
+    }
+
+    class MatchingService {
+        +matchOrder(Order, OrderBook) List~Trade~
+        -executeTrade(buyOrder, sellOrder, quantity)
+    }
+
+    class Trade {
+        +string tradeId
+        +string buyOrderId
+        +string sellOrderId
+        +string stockId
+        +int64 executionPrice
+        +int quantity
+        +timestamp executedAt
+    }
+
+    class User {
+        +string userId
+        +string name
+    }
+
+    class Stock {
+        +string stockId
+        +string symbol
+    }
+
+    StockMarketApp --> OrderService
+    OrderService --> OrderBookStore
+    OrderService --> OrderStore
+    OrderService --> MatchingService
+    OrderBookStore "1" o-- "*" OrderBook
+    OrderBook "1" o-- "*" Order
+    MatchingService --> OrderBook
+    MatchingService ..> Trade : creates
+    Order --> User : belongs to
+    Order --> Stock : trades
+    Trade --> Order : references
+```
+
+| Piece | Job |
+|---|---|
+| **StockMarketApp** | Facade: place / cancel / status |
+| **OrderService** | Orchestrates book + persistence + matching |
+| **OrderBookStore** | One `OrderBook` per stock |
+| **OrderStore** | Orders by id (status, fills) |
+| **OrderBook** | Buy / sell sets + index for cancel; `getBestBuy` / `getBestSell` |
+| **MatchingService** | Walk the book, `executeTrade`, produce `Trade`s |
+
+**Interview line:** *One book per stock. MatchingService only talks to the book. OrderStore is the source of truth for an order; the book is the live matching index. sequenceNumber breaks price-time ties.*
+
+---
+
 ## 1. Requirements
 
 ```text
@@ -676,7 +799,7 @@ Order Book
 BUY <-> SELL
 ```
 
-Unless they say *design matching engine / order book*, do **not** implement exchange complexity.
+Unless they say *design matching engine / order book*, do **not** implement exchange complexity. If they do, use the **Exchange / matching-engine class diagram** above.
 
 > I’ll assume the exchange is external. The broker validates, reserves funds / holdings, sends the order, and receives execution updates.
 

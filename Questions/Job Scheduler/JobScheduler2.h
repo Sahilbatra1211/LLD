@@ -30,7 +30,7 @@ class JobScheduler2 {
             unique_lock<mutex> l(mtx);
             cv.wait(l, [this](){return !jobQueue.empty();});
             auto [time, job] = jobQueue.top();
-            if(time > chrono::system_clock::now()){
+            if(time >  ){
                 cv.wait_until(l, time);
                 continue;
             }
